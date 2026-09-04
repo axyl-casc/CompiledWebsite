@@ -61,8 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const carouselImage = document.getElementById("carousel-image");
   const carouselTitle = document.getElementById("carousel-title");
   const carouselDesc = document.getElementById("carousel-desc");
-  const carouselPrev = document.querySelector(".carousel-prev");
-  const carouselNext = document.querySelector(".carousel-next");
   const carouselDots = document.querySelectorAll(".carousel-dots button");
   const slides = [
     {
@@ -153,18 +151,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (carousel && carouselImage) {
     setSlide(0);
     startSlideshow();
-
-    carouselPrev?.addEventListener("click", () => {
-      stopSlideshow();
-      setSlide(activeSlide - 1);
-      startSlideshow();
-    });
-
-    carouselNext?.addEventListener("click", () => {
-      stopSlideshow();
-      setSlide(activeSlide + 1);
-      startSlideshow();
-    });
 
     carouselDots.forEach((dot, index) => {
       dot.addEventListener("click", () => {

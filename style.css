@@ -319,13 +319,6 @@ code {
   font-size: clamp(1.04rem, 2vw, 1.22rem);
 }
 
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
 .hero-device {
   position: relative;
   margin: 0;
@@ -495,8 +488,7 @@ code {
 
 .slide-frame {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
 }
 
@@ -544,30 +536,6 @@ code {
   font-size: 1.04rem;
 }
 
-.carousel-button {
-  width: 46px;
-  height: 46px;
-  display: inline-grid;
-  place-items: center;
-  border: 1px solid var(--cyan);
-  border-radius: 999px;
-  background: var(--panel);
-  color: var(--cyan);
-  cursor: pointer;
-  font-family: var(--mono);
-  font-size: 1rem;
-  font-weight: 900;
-  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
-}
-
-.carousel-button:hover,
-.carousel-button:focus-visible {
-  background: var(--cyan);
-  color: var(--ink);
-  outline: none;
-  transform: translateY(-2px);
-}
-
 .carousel-dots {
   display: flex;
   justify-content: center;
@@ -575,6 +543,8 @@ code {
 }
 
 .carousel-dots button {
+  appearance: none;
+  -webkit-appearance: none;
   width: 0.8rem;
   height: 0.8rem;
   border: 1px solid var(--line);
@@ -904,14 +874,12 @@ code {
     gap: 1rem;
   }
 
-  .hero-actions,
   .download-layout,
   .footer-layout {
     align-items: stretch;
     flex-direction: column;
   }
 
-  .hero-actions .button,
   .download-layout .button {
     width: 100%;
   }
@@ -935,10 +903,6 @@ code {
     grid-template-columns: 1fr;
   }
 
-  .slide-frame {
-    grid-template-columns: 1fr;
-  }
-
   .screenshot-slide {
     grid-template-columns: 1fr;
   }
@@ -946,10 +910,6 @@ code {
   .screenshot-slide img {
     max-height: 560px;
     width: min(100%, 280px);
-  }
-
-  .carousel-button {
-    display: none;
   }
 
   .mode-card {

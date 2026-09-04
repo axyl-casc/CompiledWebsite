@@ -6,7 +6,6 @@ Static website for **Compiled**, the Android board game where players place inst
 
 - The actual Android app premise: one shared CPU, one circular memory board, private hands, and private objectives.
 - Current game modes: singleplayer, pass and play, tutorial, card dictionary, and settings.
-- Honest status for online multiplayer: planned, not active in the current app.
 - Accurate implementation details from the Android repo, including `com.compiled.game`, version `1.0.0`, Expo / React Native, portrait orientation, 12/16/20-slot boards, five-card hands, and the signed 4-bit register range.
 - A concise privacy policy that avoids unsupported claims about analytics, ads, cloud sync, persistent statistics, or Google Play services beyond ordinary Play Store distribution.
 
