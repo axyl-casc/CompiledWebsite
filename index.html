@@ -23,7 +23,7 @@
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="#" aria-label="Compiled home">
-        <img class="brand-mark" src="img/logo_with_text.png" alt="Compiled" width="354" height="190">
+        <span class="brand-prompt" aria-hidden="true">&gt;_</span>
         <span class="brand-name">COMPILED</span>
       </a>
 
@@ -193,30 +193,33 @@
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Screenshots</p>
-          <h2>The actual Android interface.</h2>
+          <h2>Screens from the Android app.</h2>
         </div>
 
-        <div class="screenshots-gallery">
-          <button class="screenshot-card" type="button" data-screenshot-src="img/main_menu.png" data-screenshot-title="Main Menu" data-screenshot-desc="The main entry point for tutorial, singleplayer, pass and play, card dictionary, and settings.">
-            <img src="img/main_menu.png" alt="Compiled Android main menu" width="405" height="906" loading="lazy">
-            <span>Main menu</span>
-          </button>
-          <button class="screenshot-card" type="button" data-screenshot-src="img/play_tab_1.png" data-screenshot-title="Command Deck" data-screenshot-desc="Your private objective and command cards sit beside the public CPU state.">
-            <img src="img/play_tab_1.png" alt="Compiled command deck screen" width="404" height="904" loading="lazy">
-            <span>Command deck</span>
-          </button>
-          <button class="screenshot-card" type="button" data-screenshot-src="img/play_tab_2.png" data-screenshot-title="Program Board" data-screenshot-desc="A 12-slot board at the start of a match, with player Program Counters around the loop.">
-            <img src="img/play_tab_2.png" alt="Compiled 12-slot program board" width="404" height="904" loading="lazy">
-            <span>12-slot board</span>
-          </button>
-          <button class="screenshot-card" type="button" data-screenshot-src="img/play_tab_3.png" data-screenshot-title="Large Board Match" data-screenshot-desc="A 20-slot board after several turns, with branches, swaps, bitwise cards, and private objective pressure.">
-            <img src="img/play_tab_3.png" alt="Compiled 20-slot program board" width="404" height="904" loading="lazy">
-            <span>20-slot board</span>
-          </button>
-          <button class="screenshot-card" type="button" data-screenshot-src="img/tutorial_section.png" data-screenshot-title="Tutorial" data-screenshot-desc="The guided tutorial explains CPU registers, cards, memory, running, branching, and objectives.">
-            <img src="img/tutorial_section.png" alt="Compiled tutorial screen" width="405" height="906" loading="lazy">
-            <span>Tutorial</span>
-          </button>
+        <div class="screenshot-carousel" aria-roledescription="carousel" aria-label="Compiled app screenshots">
+          <div class="slide-frame">
+            <button class="carousel-button carousel-prev" type="button" aria-label="Previous screenshot">
+              <span aria-hidden="true">&lt;</span>
+            </button>
+            <figure class="screenshot-slide">
+              <img id="carousel-image" src="img/main_menu.png" alt="Compiled Android main menu" width="405" height="906">
+              <figcaption>
+                <strong id="carousel-title">Main menu</strong>
+                <span id="carousel-desc">The main entry point for tutorial, singleplayer, pass and play, card dictionary, and settings.</span>
+              </figcaption>
+            </figure>
+            <button class="carousel-button carousel-next" type="button" aria-label="Next screenshot">
+              <span aria-hidden="true">&gt;</span>
+            </button>
+          </div>
+
+          <div class="carousel-dots" role="tablist" aria-label="Choose screenshot">
+            <button class="active" type="button" aria-label="Show Main menu screenshot" aria-selected="true"></button>
+            <button type="button" aria-label="Show Command deck screenshot" aria-selected="false"></button>
+            <button type="button" aria-label="Show 12-slot board screenshot" aria-selected="false"></button>
+            <button type="button" aria-label="Show 20-slot board screenshot" aria-selected="false"></button>
+            <button type="button" aria-label="Show Tutorial screenshot" aria-selected="false"></button>
+          </div>
         </div>
       </div>
     </section>
@@ -252,34 +255,14 @@
           </div>
         </div>
 
-        <aside class="spec-panel" aria-label="Android app details">
-          <img src="img/logo_with_text.png" alt="Compiled logo" width="354" height="190" loading="lazy">
-          <dl>
-            <div>
-              <dt>Platform</dt>
-              <dd>Android</dd>
-            </div>
-            <div>
-              <dt>App version</dt>
-              <dd>1.0.0</dd>
-            </div>
-            <div>
-              <dt>Package</dt>
-              <dd>com.compiled.game</dd>
-            </div>
-            <div>
-              <dt>Framework</dt>
-              <dd>Expo / React Native</dd>
-            </div>
-            <div>
-              <dt>Orientation</dt>
-              <dd>Portrait</dd>
-            </div>
-            <div>
-              <dt>Active play</dt>
-              <dd>Singleplayer and local pass and play</dd>
-            </div>
-          </dl>
+        <aside class="spec-panel" aria-label="What is included">
+          <h3>What you get</h3>
+          <ul>
+            <li>Solo matches against one to three CPU rivals.</li>
+            <li>Pass and play matches for two to four local players.</li>
+            <li>Small, medium, and large program boards.</li>
+            <li>A guided tutorial and card dictionary for learning the rules.</li>
+          </ul>
         </aside>
       </div>
     </section>
@@ -299,7 +282,6 @@
   <footer class="site-footer">
     <div class="container footer-layout">
       <div>
-        <img class="footer-mark" src="img/logo_with_text.png" alt="Compiled" width="354" height="190" loading="lazy">
         <p>One shared CPU. Many private agendas.</p>
       </div>
       <nav aria-label="Footer navigation">

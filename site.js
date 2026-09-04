@@ -57,18 +57,77 @@ document.addEventListener("DOMContentLoaded", () => {
   const dialogTitle = document.getElementById("dialog-title");
   const dialogDesc = document.getElementById("dialog-desc");
   const dialogClose = document.getElementById("dialog-close");
+  const carousel = document.querySelector(".screenshot-carousel");
+  const carouselImage = document.getElementById("carousel-image");
+  const carouselTitle = document.getElementById("carousel-title");
+  const carouselDesc = document.getElementById("carousel-desc");
+  const carouselPrev = document.querySelector(".carousel-prev");
+  const carouselNext = document.querySelector(".carousel-next");
+  const carouselDots = document.querySelectorAll(".carousel-dots button");
+  const slides = [
+    {
+      src: "img/main_menu.png",
+      alt: "Compiled Android main menu",
+      title: "Main menu",
+      desc: "The main entry point for tutorial, singleplayer, pass and play, card dictionary, and settings."
+    },
+    {
+      src: "img/play_tab_1.png",
+      alt: "Compiled command deck screen",
+      title: "Command deck",
+      desc: "Your private objective and command cards sit beside the public CPU state."
+    },
+    {
+      src: "img/play_tab_2.png",
+      alt: "Compiled 12-slot program board",
+      title: "12-slot board",
+      desc: "A 12-slot board at the start of a match, with player Program Counters around the loop."
+    },
+    {
+      src: "img/play_tab_3.png",
+      alt: "Compiled 20-slot program board",
+      title: "20-slot board",
+      desc: "A 20-slot board after several turns, with branches, swaps, bitwise cards, and private objective pressure."
+    },
+    {
+      src: "img/tutorial_section.png",
+      alt: "Compiled tutorial screen",
+      title: "Tutorial",
+      desc: "The guided tutorial explains CPU registers, cards, memory, running, branching, and objectives."
+    }
+  ];
+  let activeSlide = 0;
+  let slideTimer = null;
 
-  const openScreenshot = (card) => {
+  const setSlide = (index) => {
+    if (!carouselImage || !carouselTitle || !carouselDesc) return;
+
+    activeSlide = (index + slides.length) % slides.length;
+    const slide = slides[activeSlide];
+
+    carouselImage.src = slide.src;
+    carouselImage.alt = slide.alt;
+    carouselTitle.textContent = slide.title;
+    carouselDesc.textContent = slide.desc;
+
+    carouselDots.forEach((dot, dotIndex) => {
+      const selected = dotIndex === activeSlide;
+      dot.classList.toggle("active", selected);
+      dot.setAttribute("aria-selected", String(selected));
+    });
+  };
+
+  const openScreenshot = (slide) => {
     if (!dialog || !dialogImg || !dialogTitle || !dialogDesc) return;
 
-    const src = card.dataset.screenshotSrc;
-    const title = card.dataset.screenshotTitle || "Compiled screenshot";
-    const desc = card.dataset.screenshotDesc || "";
+    const src = slide.src;
+    const title = slide.title || "Compiled screenshot";
+    const desc = slide.desc || "";
 
     if (!src) return;
 
     dialogImg.src = src;
-    dialogImg.alt = title;
+    dialogImg.alt = slide.alt || title;
     dialogTitle.textContent = title;
     dialogDesc.textContent = desc;
 
@@ -79,9 +138,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  document.querySelectorAll(".screenshot-card").forEach((card) => {
-    card.addEventListener("click", () => openScreenshot(card));
-  });
+  const startSlideshow = () => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion || slideTimer || !carousel) return;
+    slideTimer = window.setInterval(() => setSlide(activeSlide + 1), 4200);
+  };
+
+  const stopSlideshow = () => {
+    if (!slideTimer) return;
+    window.clearInterval(slideTimer);
+    slideTimer = null;
+  };
+
+  if (carousel && carouselImage) {
+    setSlide(0);
+    startSlideshow();
+
+    carouselPrev?.addEventListener("click", () => {
+      stopSlideshow();
+      setSlide(activeSlide - 1);
+      startSlideshow();
+    });
+
+    carouselNext?.addEventListener("click", () => {
+      stopSlideshow();
+      setSlide(activeSlide + 1);
+      startSlideshow();
+    });
+
+    carouselDots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        stopSlideshow();
+        setSlide(index);
+        startSlideshow();
+      });
+    });
+
+    carousel.addEventListener("mouseenter", stopSlideshow);
+    carousel.addEventListener("mouseleave", startSlideshow);
+    carousel.addEventListener("focusin", stopSlideshow);
+    carousel.addEventListener("focusout", startSlideshow);
+    carouselImage.addEventListener("click", () => openScreenshot(slides[activeSlide]));
+  }
 
   if (dialog && dialogClose) {
     dialogClose.addEventListener("click", () => dialog.close());
