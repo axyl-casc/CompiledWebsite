@@ -3,843 +3,321 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CompiledAndroid — Official Website | Retro Computer Board Game for Mobile</title>
-  <meta name="description" content="CompiledAndroid is an Expo / React Native mobile app for Compiled, a retro computer-themed board game where players place assembly-style instruction cards into a shared circular program loop.">
-  <meta name="keywords" content="Compiled, CompiledAndroid, Expo, React Native, Android Game, Assembly Board Game, Retro Computing, Tabletop Game, Programming Game, 4-bit CPU">
+  <title>Compiled - Android Board Game</title>
+  <meta name="description" content="Compiled is an Android board game about placing instruction cards into a shared program loop, running a tiny CPU, and completing private objectives.">
+  <meta name="keywords" content="Compiled, Android board game, programming game, strategy game, pass and play, Expo React Native">
   <link rel="icon" type="image/png" href="img/logo_with_text.png">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="CompiledAndroid — Retro Computer Tabletop Strategy for Mobile">
-  <meta property="og:description" content="One program. Many agendas. The Expo / React Native assembly board game with a shared 4-bit CPU and private objectives.">
+  <meta property="og:title" content="Compiled - Android Board Game">
+  <meta property="og:description" content="Build the program. Control the CPU. Compiled is a tactical Android board game with shared registers, private objectives, and local play.">
   <meta property="og:image" content="img/logo_with_text.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CompiledAndroid — Retro Computer Tabletop Strategy for Mobile">
-  <meta name="twitter:description" content="One program. Many agendas. The Expo / React Native assembly board game with a shared 4-bit CPU and private objectives.">
+  <meta name="twitter:title" content="Compiled - Android Board Game">
+  <meta name="twitter:description" content="A tactical Android board game about one shared CPU and many private agendas.">
   <meta name="twitter:image" content="img/logo_with_text.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Accessibility Skip Link -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <!-- Masthead Navigation -->
   <header class="site-header">
     <div class="container nav-wrap">
-      <a href="#" class="brand" aria-label="Compiled Home">
-        <img src="img/logo_with_text.png" alt="Compiled Logo" class="brand-logo-img" width="354" height="190" loading="lazy">
-        <div class="brand-text">
-          <span class="brand-logo"><span class="brand-prompt">&gt;_</span>COMPILED<span class="brand-cursor" aria-hidden="true"></span></span>
-          <span class="brand-tagline">One program. Many agendas.</span>
-        </div>
+      <a class="brand" href="#" aria-label="Compiled home">
+        <img class="brand-mark" src="img/logo_with_text.png" alt="Compiled" width="354" height="190">
+        <span class="brand-name">COMPILED</span>
       </a>
 
-      <nav aria-label="Primary Navigation">
+      <button id="mobile-toggle" class="icon-button mobile-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation">
+        <span aria-hidden="true">=</span>
+      </button>
+
+      <nav aria-label="Primary navigation">
         <ul id="nav-links" class="nav-links">
-          <li><a href="#features" class="nav-link">Features</a></li>
-          <li><a href="#screenshots" class="nav-link">Screenshots</a></li>
-          <li><a href="#how-to-play" class="nav-link">How to Play</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="privacy.html" class="nav-link">Privacy</a></li>
+          <li><a href="#game">Game</a></li>
+          <li><a href="#modes">Modes</a></li>
+          <li><a href="#screenshots">Screens</a></li>
+          <li><a href="#details">Details</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
         </ul>
       </nav>
 
-      <div class="nav-actions">
-        <!-- Placeholder Google Play link: update with official store URL when published -->
-        <a href="https://play.google.com/store/apps/details?id=com.axylcasc.compiled" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">
-          Get on Android
-        </a>
-        <button id="mobile-toggle" class="mobile-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">
-          <span>☰</span> MENU
-        </button>
-      </div>
+      <a class="button button-small nav-cta" href="https://play.google.com/store/apps/details?id=com.compiled.game" target="_blank" rel="noopener noreferrer">Google Play</a>
     </div>
   </header>
 
   <main id="main-content">
-    <!-- ====================================================================
-         Hero Section
-         ==================================================================== -->
-    <section class="section hero" aria-labelledby="hero-heading">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <div class="hero-badge">
-            <span aria-hidden="true">●</span> RETRO COMPUTING BOARD GAME · EXPO &amp; REACT NATIVE
-          </div>
-          <h1 id="hero-heading" class="hero-title">COMPILED</h1>
-          <p class="hero-subtitle">One program. Many agendas.</p>
-          <p class="hero-description">
-            The mobile adaptation of <strong>Compiled</strong>, built with <strong>Expo &amp; React Native</strong>. Players place assembly-style instruction cards into a shared circular program loop (12, 16, or 20 memory slots). Every player holds private cards and a private objective, but everyone manipulates the same signed 4-bit CPU registers and board memory. You win only when your own turn finishes with your secret objective satisfied!
+    <section class="hero section">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow">Android strategy board game</p>
+          <h1>COMPILED</h1>
+          <p class="hero-line">Build the program. Control the CPU.</p>
+          <p class="hero-text">
+            Place instruction cards into a shared circular memory board, run a tiny signed 4-bit CPU, and try to end your own turn with your private objective satisfied. Every player touches the same registers, so the move that helps you can also open the door for someone else.
           </p>
-
-          <div class="hero-ctas">
-            <!-- Main Google Play Download Button -->
-            <!-- PLACEHOLDER LINK: Easy to replace with production Google Play URL -->
-            <a href="https://play.google.com/store/apps/details?id=com.axylcasc.compiled" class="btn btn-play-store" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
-              <svg class="btn-play-icon" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true">
-                <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z" />
-              </svg>
-              <div class="btn-play-text">
-                <span class="btn-play-eyebrow">GET IT ON</span>
-                <span class="btn-play-title">Google Play</span>
-              </div>
-            </a>
-
-            <a href="#how-to-play" class="btn btn-secondary">
-              How to Play &gt;
-            </a>
-          </div>
-
-          <div class="hero-meta">
-            <div class="hero-meta-item">
-              <span class="dot" aria-hidden="true"></span>
-              <span>1–3 CPU Rivals (Easy / Normal / Hard)</span>
-            </div>
-            <div class="hero-meta-item">
-              <span class="dot" aria-hidden="true"></span>
-              <span>2–4 Player Pass &amp; Play with Privacy Screen</span>
-            </div>
-            <div class="hero-meta-item">
-              <span class="dot" aria-hidden="true"></span>
-              <span>12, 16, or 20 Slot Program Loops</span>
-            </div>
+          <div class="hero-actions">
+            <a class="button" href="https://play.google.com/store/apps/details?id=com.compiled.game" target="_blank" rel="noopener noreferrer">Open Google Play</a>
+            <a class="button button-secondary" href="#screenshots">View screens</a>
           </div>
         </div>
 
-        <!-- Interactive Hero Device Mockup with Dual Mode -->
-        <div class="phone-mockup-wrapper" aria-label="Interactive Android gameplay preview">
-          <div class="phone-mode-switch" role="tablist" aria-label="Phone mockup view switcher">
-            <button type="button" class="phone-mode-btn active" role="tab" aria-selected="true" data-view="interactive" id="tab-interactive">⚡ Interactive Sim</button>
-            <button type="button" class="phone-mode-btn" role="tab" aria-selected="false" data-view="screenshot" id="tab-screenshot">📱 In-Game View</button>
-          </div>
-          <div class="phone-mockup">
-            <div class="phone-notch"></div>
-            <!-- Interactive Simulator View -->
-            <div class="phone-screen phone-screen-interactive" id="hero-interactive-view" role="tabpanel" aria-labelledby="tab-interactive">
-              <!-- Mockup Status Bar with Format Switcher -->
-              <div class="mockup-status-bar">
-                <span>CPU: SIGNED 4-BIT</span>
-                <div class="mockup-format-pills" role="group" aria-label="Register format">
-                  <button type="button" class="format-pill active" data-format="dec">DEC</button>
-                  <button type="button" class="format-pill" data-format="hex">HEX</button>
-                  <button type="button" class="format-pill" data-format="bin">BIN</button>
-                </div>
-                <span>MEM: 12/16/20</span>
-              </div>
+        <figure class="hero-device" aria-label="Compiled running on Android">
+          <img src="img/play_tab_3.png" alt="Compiled Program Board screen with registers, private objective, and a 20-slot memory loop" width="404" height="904">
+        </figure>
+      </div>
+    </section>
 
-              <!-- Shared CPU Registers (Data + Status Flags) -->
-              <div class="mockup-cpu">
-                <div class="mockup-cpu-head">
-                  <span>DATA REGISTERS (-8..+7 WRAP)</span>
-                  <span class="status-badge-live">PUBLIC</span>
-                </div>
-                <div class="mockup-registers">
-                  <div class="mockup-reg">
-                    <span class="mockup-reg-name">R0</span>
-                    <span id="mockup-reg-r0" class="mockup-reg-val">+5</span>
-                  </div>
-                  <div class="mockup-reg">
-                    <span class="mockup-reg-name">R1</span>
-                    <span id="mockup-reg-r1" class="mockup-reg-val">-3</span>
-                  </div>
-                  <div class="mockup-reg">
-                    <span class="mockup-reg-name">R2</span>
-                    <span id="mockup-reg-r2" class="mockup-reg-val">+0</span>
-                  </div>
-                  <div class="mockup-reg">
-                    <span class="mockup-reg-name">R3</span>
-                    <span id="mockup-reg-r3" class="mockup-reg-val">+7</span>
-                  </div>
-                </div>
-
-                <!-- Status Registers (Flags) -->
-                <div class="mockup-cpu-head" style="margin-top: 6px;">
-                  <span>STATUS FLAGS (Z, N, C, V)</span>
-                  <span>4-BIT ALU</span>
-                </div>
-                <div class="mockup-flags">
-                  <div class="mockup-flag">
-                    <span class="mockup-flag-name">Z (Zero)</span>
-                    <span id="mockup-flag-z" class="mockup-flag-val">0</span>
-                  </div>
-                  <div class="mockup-flag">
-                    <span class="mockup-flag-name">N (Neg)</span>
-                    <span id="mockup-flag-n" class="mockup-flag-val">0</span>
-                  </div>
-                  <div class="mockup-flag">
-                    <span class="mockup-flag-name">C (Carry)</span>
-                    <span id="mockup-flag-c" class="mockup-flag-val">0</span>
-                  </div>
-                  <div class="mockup-flag">
-                    <span class="mockup-flag-name">V (Ovf)</span>
-                    <span id="mockup-flag-v" class="mockup-flag-val">0</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Board Track Representation -->
-              <div class="mockup-board" title="Circular program loop (Empty slots = NOP halts execution)">
-                <div class="mockup-tile active" id="mockup-active-tile">
-                  <span class="mockup-tile-mem">MEM 00</span>
-                  <span id="mockup-active-op" class="mockup-tile-op">MOVE #5,R0</span>
-                  <span id="mockup-pc-token" class="mockup-token" title="Your Program Counter"></span>
-                </div>
-                <div class="mockup-tile">
-                  <span class="mockup-tile-mem">MEM 01</span>
-                  <span class="mockup-tile-op">ADD #2,R1</span>
-                </div>
-                <div class="mockup-tile">
-                  <span class="mockup-tile-mem">MEM 02</span>
-                  <span class="mockup-tile-op">NOP</span>
-                </div>
-                <div class="mockup-tile">
-                  <span class="mockup-tile-mem">MEM 03</span>
-                  <span class="mockup-tile-op">SWAP R1,R2</span>
-                </div>
-                <div class="mockup-tile">
-                  <span class="mockup-tile-mem">MEM 04</span>
-                  <span class="mockup-tile-op">BRA +02</span>
-                </div>
-                <div class="mockup-tile">
-                  <span class="mockup-tile-mem">MEM 05</span>
-                  <span class="mockup-tile-op">AND #3,R0</span>
-                </div>
-                <div class="mockup-tile">
-                  <span class="mockup-tile-mem">MEM 06</span>
-                  <span class="mockup-tile-op">CLR R2</span>
-                </div>
-                <div class="mockup-tile">
-                  <span class="mockup-tile-mem">MEM 07</span>
-                  <span class="mockup-tile-op">NOP</span>
-                </div>
-              </div>
-
-              <!-- Classified Secret Objective -->
-              <div class="mockup-objective">
-                <span class="mockup-obj-title">CLASSIFIED MISSION [PLAYER 1]</span>
-                <span class="mockup-obj-val">OBJECTIVE: R0 = -R1 and R0 &gt;= +3</span>
-              </div>
-
-              <!-- Hand Cards with interactive test triggers -->
-              <div>
-                <p style="font-size: 0.55rem; color: var(--text-dim); margin-bottom: 3px; text-transform: uppercase;">
-                  Stage &amp; run an instruction on the shared CPU:
-                </p>
-                <div class="mockup-hand">
-                  <button type="button" class="mockup-card interactive-mockup-card highlight" data-action="move">MOVE #5, R0</button>
-                  <button type="button" class="mockup-card interactive-mockup-card" data-action="add">ADD #2, R1</button>
-                  <button type="button" class="mockup-card interactive-mockup-card" data-action="swap">SWAP R1, R2</button>
-                  <button type="button" class="mockup-card interactive-mockup-card" data-action="and">AND #3, R0</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- In-Game Screenshot Capture View (Lazy Loaded) -->
-            <div class="phone-screen phone-screen-capture" id="hero-screenshot-view" role="tabpanel" aria-labelledby="tab-screenshot" hidden>
-              <img src="img/play_tab_3.png" alt="Compiled Android game running on device: 20-slot Program Board with active instructions and shared registers" class="hero-screen-img" width="404" height="904" loading="lazy">
-            </div>
-          </div>
-          <div class="phone-glow-tag">
-            <span aria-hidden="true">✔</span> ANDROID MOBILE PREVIEW
-          </div>
+    <section class="facts section-tight" aria-label="Game facts">
+      <div class="container fact-grid">
+        <div>
+          <strong>1-3 CPU rivals</strong>
+          <span>Easy, normal, or hard singleplayer</span>
+        </div>
+        <div>
+          <strong>2-4 local players</strong>
+          <span>Pass and play on one Android device</span>
+        </div>
+        <div>
+          <strong>12, 16, or 20 slots</strong>
+          <span>Configurable circular program boards</span>
+        </div>
+        <div>
+          <strong>Private objectives</strong>
+          <span>Victory checks only after your own run</span>
         </div>
       </div>
     </section>
 
-    <!-- ====================================================================
-         Features Section
-         ==================================================================== -->
-    <section id="features" class="section section-alt" aria-labelledby="features-heading">
-      <div class="container">
-        <header class="section-header">
-          <div class="terminal-badge">SYSTEM SPECIFICATION // COMPILED ANDROID (EXPO / REACT NATIVE)</div>
-          <h2 id="features-heading" class="section-title">Engineered for Tactical Low-Level Strategy</h2>
-          <p class="section-desc">
-            Every player has private cards and a private objective, but everyone manipulates the same CPU registers and board memory. You win only when your own turn finishes and your private objective is satisfied.
+    <section id="game" class="section">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">What the game is</p>
+          <h2>One shared machine, several hidden plans.</h2>
+          <p>
+            Compiled turns a programming idea into a board game. The board is a loop of memory slots. The cards are small instructions. The CPU has four shared data registers, <code>R0</code> through <code>R3</code>, and four status flags, <code>Z</code>, <code>N</code>, <code>C</code>, and <code>V</code>.
           </p>
-        </header>
+          <p>
+            Your hand and objective are private. The board and CPU are public. On your turn, you place one card, draw back up, then run from your Program Counter. If the registers match your objective when execution stops, you win.
+          </p>
+        </div>
 
-        <div class="features-grid">
-          <!-- Feature 1 -->
-          <article class="feature-card">
-            <div class="feature-header">
-              <span class="feature-tag">[ARCH_01]</span>
-              <div class="feature-icon-box" aria-hidden="true">4b</div>
-            </div>
-            <h3 class="feature-title">Signed 4-Bit Virtual CPU</h3>
-            <p class="feature-body">
-              Simulates 4 shared data registers (<code>R0</code>–<code>R3</code>) and 4 status registers (<code>Z</code>, <code>N</code>, <code>C</code>, <code>V</code>). Arithmetic wraps in signed 4-bit form from <strong>-8 through +7</strong> (e.g. <code>+7 + 1 = -8</code>).
-            </p>
+        <div class="mechanic-list" aria-label="Core mechanics">
+          <article class="mechanic">
+            <span>01</span>
+            <h3>Program the loop</h3>
+            <p>Overwrite memory slots with cards like <code>MOVE #3, R0</code>, <code>SWAP R2, R0</code>, or <code>BRA -2</code>.</p>
           </article>
-
-          <!-- Feature 2 -->
-          <article class="feature-card">
-            <div class="feature-header">
-              <span class="feature-tag">[ARCH_02]</span>
-              <div class="feature-icon-box" aria-hidden="true">LOOP</div>
-            </div>
-            <h3 class="feature-title">Circular Program Loops</h3>
-            <p class="feature-body">
-              Configurable circular memory tracks with <strong>12, 16, or 20 slots</strong>. Crucially, empty board slots resolve as <code>NOP</code> and halt program execution immediately.
-            </p>
+          <article class="mechanic">
+            <span>02</span>
+            <h3>Run the CPU</h3>
+            <p>Registers wrap from <code>-8</code> to <code>+7</code>. Empty slots are <code>NOP</code> and stop execution.</p>
           </article>
-
-          <!-- Feature 3 -->
-          <article class="feature-card">
-            <div class="feature-header">
-              <span class="feature-tag">[ARCH_03]</span>
-              <div class="feature-icon-box" aria-hidden="true">STEP</div>
-            </div>
-            <h3 class="feature-title">Execution Turn Lifecycle</h3>
-            <p class="feature-body">
-              Place 1 card, draw a replacement, then run. The Program Counter advances before execution. Register commands run and halt; <code>BRA</code> branches relative up to <strong>5 max instructions per turn</strong>.
-            </p>
-          </article>
-
-          <!-- Feature 4 -->
-          <article class="feature-card">
-            <div class="feature-header">
-              <span class="feature-tag">[ARCH_04]</span>
-              <div class="feature-icon-box" aria-hidden="true">?!</div>
-            </div>
-            <h3 class="feature-title">Private Agendas &amp; Victory</h3>
-            <p class="feature-body">
-              Every player holds private cards and a classified secret objective. Objectives are evaluated strictly after the active player's execution phase finishes. You win only when your own turn finishes satisfied!
-            </p>
-          </article>
-
-          <!-- Feature 5 -->
-          <article class="feature-card">
-            <div class="feature-header">
-              <span class="feature-tag">[ARCH_05]</span>
-              <div class="feature-icon-box" aria-hidden="true">AI</div>
-            </div>
-            <h3 class="feature-title">Three-Tier Adaptive AI</h3>
-            <p class="feature-body">
-              Play solo with 1–3 CPU rivals across Easy (plays loosely/randomly), Normal (evaluates objective progress), and Hard (adds lookahead simulation). AI operates with a strictly fair, restricted view.
-            </p>
-          </article>
-
-          <!-- Feature 6 -->
-          <article class="feature-card">
-            <div class="feature-header">
-              <span class="feature-tag">[ARCH_06]</span>
-              <div class="feature-icon-box" aria-hidden="true">PRIV</div>
-            </div>
-            <h3 class="feature-title">Pass &amp; Play with Privacy Screen</h3>
-            <p class="feature-body">
-              Local multiplayer for 2–4 players mixing humans and CPU rivals. A dedicated Turn Handoff Privacy Screen conceals cards and objectives so you can safely pass the device.
-            </p>
-          </article>
-
-          <!-- Feature 7 -->
-          <article class="feature-card">
-            <div class="feature-header">
-              <span class="feature-tag">[ARCH_07]</span>
-              <div class="feature-icon-box" aria-hidden="true">DICT</div>
-            </div>
-            <h3 class="feature-title">In-App Card Dictionary</h3>
-            <p class="feature-body">
-              Comprehensive reference encyclopedia detailing syntax, examples, exact mathematical behavior, and strategy for every instruction card in the deck.
-            </p>
-          </article>
-
-          <!-- Feature 8 -->
-          <article class="feature-card">
-            <div class="feature-header">
-              <span class="feature-tag">[ARCH_08]</span>
-              <div class="feature-icon-box" aria-hidden="true">0x</div>
-            </div>
-            <h3 class="feature-title">Register Inspector &amp; Formats</h3>
-            <p class="feature-body">
-              Built-in register converter showing DEC, HEX, and BIN values in real time, plus settings for animation speed and tutorial reset. (Online multiplayer is explicitly Coming Soon).
-            </p>
+          <article class="mechanic">
+            <span>03</span>
+            <h3>Keep your objective quiet</h3>
+            <p>Everyone can see the same board state, but only you know exactly which register pattern you need.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ====================================================================
-         Screenshots / Media Showcase Section
-         ==================================================================== -->
-    <section id="screenshots" class="section" aria-labelledby="screenshots-heading">
+    <section class="section section-muted">
       <div class="container">
-        <header class="section-header">
-          <div class="terminal-badge">UI CAPTURE // ANDROID APPLICATION</div>
-          <h2 id="screenshots-heading" class="section-title">Screenshots &amp; Interface</h2>
-          <p class="section-desc">
-            Designed specifically for Android phones and tablets with tactile controls, crisp typography, and full dark-mode aesthetic.
-          </p>
-        </header>
-
-        <div class="screenshots-gallery">
-          <!-- Screenshot 1: Main Menu & Modes -->
-          <article class="screenshot-card" role="button" tabindex="0" data-screenshot-src="img/main_menu.png" data-screenshot-title="Command Center &amp; Modes" data-screenshot-desc="Clean terminal interface with instant access to Tutorial, Singleplayer (1-3 CPU rivals), Pass &amp; Play local multiplayer (2-4 players), Card Dictionary, and Settings.">
-            <div class="screenshot-frame">
-              <img src="img/main_menu.png" alt="Compiled Android game main menu interface showing game modes" class="screenshot-img" width="407" height="907" loading="lazy">
-              <div class="screenshot-overlay">
-                <span class="screenshot-zoom-btn" aria-hidden="true">⤢ EXPAND</span>
-              </div>
-            </div>
-            <div class="screenshot-info">
-              <div class="screenshot-badge">SCREEN 01 // MAIN MENU</div>
-              <h3 class="screenshot-title">Command Center &amp; Modes</h3>
-              <p class="screenshot-desc">
-                Instant access to Tutorial, Singleplayer (1–3 CPU rivals), Pass &amp; Play (2–4 players), Card Dictionary, and Settings.
-              </p>
-            </div>
-          </article>
-
-          <!-- Screenshot 2: 20-Slot Board -->
-          <article class="screenshot-card" role="button" tabindex="0" data-screenshot-src="img/play_tab_3.png" data-screenshot-title="The Full Program Loop (20 Slots)" data-screenshot-desc="20-slot circular memory board with active instructions (OR, SWAP, ROL, BRA, XOR, NEG), player Program Counters, and real-time CPU registers.">
-            <div class="screenshot-frame">
-              <img src="img/play_tab_3.png" alt="Compiled 20-slot Program Board showing cyclic instruction track, player tokens, and shared registers" class="screenshot-img" width="404" height="904" loading="lazy">
-              <div class="screenshot-overlay">
-                <span class="screenshot-zoom-btn" aria-hidden="true">⤢ EXPAND</span>
-              </div>
-            </div>
-            <div class="screenshot-info">
-              <div class="screenshot-badge">SCREEN 02 // 20-SLOT BOARD</div>
-              <h3 class="screenshot-title">The Full Program Loop</h3>
-              <p class="screenshot-desc">
-                20-slot circular memory board with active instructions (<code>OR</code>, <code>SWAP</code>, <code>ROL</code>, <code>BRA</code>, <code>XOR</code>, <code>NEG</code>), player Program Counters, and CPU registers.
-              </p>
-            </div>
-          </article>
-
-          <!-- Screenshot 3: Command Deck & Hand -->
-          <article class="screenshot-card" role="button" tabindex="0" data-screenshot-src="img/play_tab_1.png" data-screenshot-title="Tactical Hand &amp; Agendas" data-screenshot-desc="Active player control deck displaying shared 4-bit CPU registers, status flags (Z, N, C, V), classified secret victory objective, and 5-card instruction hand.">
-            <div class="screenshot-frame">
-              <img src="img/play_tab_1.png" alt="Compiled Command Deck screen displaying secret objective, shared CPU registers, and 5-card instruction hand" class="screenshot-img" width="405" height="906" loading="lazy">
-              <div class="screenshot-overlay">
-                <span class="screenshot-zoom-btn" aria-hidden="true">⤢ EXPAND</span>
-              </div>
-            </div>
-            <div class="screenshot-info">
-              <div class="screenshot-badge">SCREEN 03 // COMMAND DECK</div>
-              <h3 class="screenshot-title">Tactical Hand &amp; Agendas</h3>
-              <p class="screenshot-desc">
-                Active player control deck displaying shared 4-bit CPU registers, flags (<code>Z</code>, <code>N</code>, <code>C</code>, <code>V</code>), classified secret victory objective, and 5-card instruction hand.
-              </p>
-            </div>
-          </article>
-
-          <!-- Screenshot 4: Single Player vs AI -->
-          <article class="screenshot-card" role="button" tabindex="0" data-screenshot-src="img/play_tab_2.png" data-screenshot-title="Solo Play vs CPU Rival" data-screenshot-desc="Challenge computer opponents on a 12-slot circular loop. Easy, Normal, or Hard AI with lookahead simulation and strictly fair hidden states.">
-            <div class="screenshot-frame">
-              <img src="img/play_tab_2.png" alt="Compiled Singleplayer match vs CPU Rival on clockwise program loop" class="screenshot-img" width="402" height="910" loading="lazy">
-              <div class="screenshot-overlay">
-                <span class="screenshot-zoom-btn" aria-hidden="true">⤢ EXPAND</span>
-              </div>
-            </div>
-            <div class="screenshot-info">
-              <div class="screenshot-badge">SCREEN 04 // SINGLEPLAYER</div>
-              <h3 class="screenshot-title">Solo Play vs CPU Rival</h3>
-              <p class="screenshot-desc">
-                Challenge computer opponents on a 12-slot circular loop. Easy, Normal, or Hard AI with lookahead simulation and strictly fair hidden states.
-              </p>
-            </div>
-          </article>
-
-          <!-- Screenshot 5: Tutorial & Manual -->
-          <article class="screenshot-card" role="button" tabindex="0" data-screenshot-src="img/tutorial_section.png" data-screenshot-title="Scripted 11-Step Tutorial" data-screenshot-desc="Step-by-step interactive manual teaching CPU registers, status flags, board memory, card placement, running, branching, and objectives.">
-            <div class="screenshot-frame">
-              <img src="img/tutorial_section.png" alt="Compiled in-app Tutorial step 1 explaining CPU registers and status flags" class="screenshot-img" width="402" height="909" loading="lazy">
-              <div class="screenshot-overlay">
-                <span class="screenshot-zoom-btn" aria-hidden="true">⤢ EXPAND</span>
-              </div>
-            </div>
-            <div class="screenshot-info">
-              <div class="screenshot-badge">SCREEN 05 // ACADEMY</div>
-              <h3 class="screenshot-title">Scripted 11-Step Tutorial</h3>
-              <p class="screenshot-desc">
-                Step-by-step interactive manual teaching CPU registers, status flags, board memory, card placement, running, branching, and objectives.
-              </p>
-            </div>
-          </article>
+        <div class="section-heading">
+          <p class="eyebrow">Turn flow</p>
+          <h2>A turn is short. The consequences are not.</h2>
         </div>
-      </div>
-    </section>
 
-    <!-- ====================================================================
-         How to Play Section
-         ==================================================================== -->
-    <section id="how-to-play" class="section section-alt" aria-labelledby="how-to-heading">
-      <div class="container">
-        <header class="section-header">
-          <div class="terminal-badge">OPERATING MANUAL // GAMEPLAY LOOP</div>
-          <h2 id="how-to-heading" class="section-title">How to Play Compiled</h2>
-          <p class="section-desc">
-            A turn in Compiled represents one execution clock cycle on the shared 4-bit virtual processor.
-          </p>
-        </header>
-
-        <!-- 5 Steps Flow -->
-        <ol class="how-to-steps">
-          <li class="step-card">
-            <h3>1. Receive Mission &amp; Hand</h3>
-            <p>
-              Draw your classified private secret objective and starting instruction hand. Your objective defines a target register state (e.g. <code>R0 = -R1 and R0 &gt;= +3</code> or <code>R1 + R3 = -4 and R1 &lt; 0</code>). Objectives stay secret from other players.
-            </p>
+        <ol class="turn-flow">
+          <li>
+            <span>Place</span>
+            <p>Choose one card from your hand and put it on any memory slot. Existing instructions can be overwritten.</p>
           </li>
-
-          <li class="step-card">
-            <h3>2. Place One Card</h3>
-            <p>
-              Choose one instruction card from your hand and program it onto any slot around the circular memory loop (12, 16, or 20 slots). Overwrite existing instructions to build chained execution loops or disrupt rival plans.
-            </p>
+          <li>
+            <span>Draw</span>
+            <p>A replacement instruction goes into your hand, keeping future plans flexible.</p>
           </li>
-
-          <li class="step-card">
-            <h3>3. Draw Replacement</h3>
-            <p>
-              Immediately draw a replacement instruction card from the deck to maintain your tactical hand before initiating program execution.
-            </p>
+          <li>
+            <span>Advance</span>
+            <p>Your Program Counter moves one slot before execution begins.</p>
           </li>
-
-          <li class="step-card">
-            <h3>4. Advance &amp; Run CPU</h3>
-            <p>
-              Your Program Counter (PC) advances by one memory slot before execution. Register commands run and immediately halt the turn; <code>BRA</code> branches relative to the current slot and can chain executions (capped at <strong>5 instructions max</strong>). Empty slots resolve as <code>NOP</code> and halt the turn.
-            </p>
+          <li>
+            <span>Execute</span>
+            <p>Register instructions end the run. <code>BRA</code> can chain up to five executed instructions before the turn stops.</p>
           </li>
-
-          <li class="step-card">
-            <h3>5. Check Secret Objective</h3>
-            <p>
-              Secret objectives are evaluated <strong>only after the active player's execution phase finishes</strong>. You win only when your own turn finishes with your secret objective fully satisfied!
-            </p>
+          <li>
+            <span>Check</span>
+            <p>Your private objective is checked only after your own execution phase ends.</p>
           </li>
         </ol>
+      </div>
+    </section>
 
-        <!-- Opcode Quick Reference Matrix -->
-        <div class="opcode-reference">
-          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-            <h3 style="color: var(--amber);">// INSTRUCTION SET ARCHITECTURE (ISA)</h3>
-            <span class="code-tag">SIGNED 4-BIT VIRTUAL CPU</span>
-          </div>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-block: 8px 16px;">
-            All arithmetic operations modify shared registers <code>R0</code>–<code>R3</code> and update status flags <code>Z</code> (Zero), <code>N</code> (Negative), <code>C</code> (Carry), and <code>V</code> (Overflow) with clean signed two's complement wrapping (-8 through +7). Full strategy guides for each opcode are available in the in-app Card Dictionary.
-          </p>
-          <div class="opcode-table-wrap">
-            <table class="opcode-table">
-              <thead>
-                <tr>
-                  <th scope="col">Category</th>
-                  <th scope="col">Opcode</th>
-                  <th scope="col">Syntax Example</th>
-                  <th scope="col">Operation &amp; In-Game Effect</th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- Value / Arithmetic -->
-                <tr>
-                  <td rowspan="4"><span class="opcode-cat-tag">Value / Arithmetic</span></td>
-                  <td><span class="opcode-name">MOVE</span></td>
-                  <td><span class="opcode-syntax">MOVE #5, R0</span></td>
-                  <td>Loads an immediate signed integer directly into the target register.</td>
-                </tr>
-                <tr>
-                  <td><span class="opcode-name">ADD</span></td>
-                  <td><span class="opcode-syntax">ADD #2, R1</span></td>
-                  <td>Adds immediate value with 4-bit two's complement wrap (-8..+7). Updates Z, N, C, V.</td>
-                </tr>
-                <tr>
-                  <td><span class="opcode-name">SUB</span></td>
-                  <td><span class="opcode-syntax">SUB #3, R2</span></td>
-                  <td>Subtracts value from target register with wrapping arithmetic. Updates flags.</td>
-                </tr>
-                <tr>
-                  <td><span class="opcode-name">MUL</span></td>
-                  <td><span class="opcode-syntax">MUL #2, R0</span></td>
-                  <td>Multiplies target register by signed immediate with 4-bit wrapping. Updates flags.</td>
-                </tr>
+    <section id="modes" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Modes in the app</p>
+          <h2>Built for solo puzzle fights and same-device play.</h2>
+        </div>
 
-                <!-- Bitwise Value Ops -->
-                <tr>
-                  <td rowspan="3"><span class="opcode-cat-tag">Bitwise Logic</span></td>
-                  <td><span class="opcode-name">AND</span></td>
-                  <td><span class="opcode-syntax">AND #3, R0</span></td>
-                  <td>Bitwise logical AND with mask. Clears bits not set in immediate.</td>
-                </tr>
-                <tr>
-                  <td><span class="opcode-name">OR</span></td>
-                  <td><span class="opcode-syntax">OR #5, R2</span></td>
-                  <td>Bitwise logical OR with mask. Sets specific bits in target register.</td>
-                </tr>
-                <tr>
-                  <td><span class="opcode-name">XOR</span></td>
-                  <td><span class="opcode-syntax">XOR #-2, R0</span></td>
-                  <td>Bitwise exclusive OR. Inverts selected bits in target register.</td>
-                </tr>
-
-                <!-- Unary Operations -->
-                <tr>
-                  <td rowspan="5"><span class="opcode-cat-tag">Unary Ops</span></td>
-                  <td><span class="opcode-name">INC</span></td>
-                  <td><span class="opcode-syntax">INC R0</span></td>
-                  <td>Increments register by 1 (e.g. +7 wraps to -8). Updates flags.</td>
-                </tr>
-                <tr>
-                  <td><span class="opcode-name">DEC</span></td>
-                  <td><span class="opcode-syntax">DEC R3</span></td>
-                  <td>Decrements register by 1 (e.g. -8 wraps to +7). Updates flags.</td>
-                </tr>
-                <tr>
-                  <td><span class="opcode-name">NEG</span></td>
-                  <td><span class="opcode-syntax">NEG R2</span></td>
-                  <td>Two's complement arithmetic negation (reverses sign: +5 becomes -5).</td>
-                </tr>
-                <tr>
-                  <td><span class="opcode-name">CLR</span></td>
-                  <td><span class="opcode-syntax">CLR R1</span></td>
-                  <td>Clears register value to 0. Sets Zero flag (Z=1).</td>
-                </tr>
-                <tr>
-                  <td><span class="opcode-name">NOT</span></td>
-                  <td><span class="opcode-syntax">NOT R0</span></td>
-                  <td>Bitwise one's complement inversion (flips all 4 bits).</td>
-                </tr>
-
-                <!-- Bit Shifts & Rotates -->
-                <tr>
-                  <td rowspan="4"><span class="opcode-cat-tag">Shifts &amp; Rotates</span></td>
-                  <td><span class="opcode-name">LSL</span></td>
-                  <td><span class="opcode-syntax">LSL R1</span></td>
-                  <td>Logical shift left by 1 bit, shifting 0 into the least significant bit.</td>
-                </tr>
-                <tr>
-                  <td><span class="opcode-name">LSR</span></td>
-                  <td><span class="opcode-syntax">LSR R2</span></td>
-                  <td>Logical shift right by 1 bit, shifting 0 into the most significant bit.</td>
-                </tr>
-                <tr>
-                  <td><span class="opcode-name">ROL</span></td>
-                  <td><span class="opcode-syntax">ROL R1</span></td>
-                  <td>Rotate left: bits shifted out of MSB re-enter at LSB.</td>
-                </tr>
-                <tr>
-                  <td><span class="opcode-name">ROR</span></td>
-                  <td><span class="opcode-syntax">ROR R3</span></td>
-                  <td>Rotate right: bits shifted out of LSB re-enter at MSB.</td>
-                </tr>
-
-                <!-- Control & Data Exchange -->
-                <tr>
-                  <td rowspan="3"><span class="opcode-cat-tag">Control / System</span></td>
-                  <td><span class="opcode-name">SWAP</span></td>
-                  <td><span class="opcode-syntax">SWAP R1, R2</span></td>
-                  <td>Exchanges contents between two designated registers simultaneously.</td>
-                </tr>
-                <tr>
-                  <td><span class="opcode-name">BRA</span></td>
-                  <td><span class="opcode-syntax">BRA +02 / BRA -03</span></td>
-                  <td>Relative branch jump: leaps Program Counter forward or backward up to 5 chained instructions.</td>
-                </tr>
-                <tr>
-                  <td><span class="opcode-name">NOP</span></td>
-                  <td><span class="opcode-syntax">NOP</span></td>
-                  <td>No operation. Represents an empty board slot; immediately stops execution for the turn.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="mode-grid">
+          <article class="mode-card">
+            <h3>Singleplayer</h3>
+            <p>Play against one to three CPU rivals. Easy plays loosely, Normal scores objective progress, and Hard adds a small lookahead.</p>
+          </article>
+          <article class="mode-card">
+            <h3>Pass and Play</h3>
+            <p>Set up two to four players on one device. Mix humans and CPU rivals, then hand off between turns while private cards and objectives are hidden.</p>
+          </article>
+          <article class="mode-card">
+            <h3>Tutorial</h3>
+            <p>An 11-step guided match teaches the CPU, memory board, instruction cards, branching, and objective timing.</p>
+          </article>
+          <article class="mode-card">
+            <h3>Card Dictionary</h3>
+            <p>Browse every instruction in the app with syntax, examples, 4-bit math behavior, and tactical notes.</p>
+          </article>
+          <article class="mode-card">
+            <h3>Settings</h3>
+            <p>Switch number display between decimal, hex, and binary, choose animation speed, and open the register converter.</p>
+          </article>
+          <article class="mode-card mode-card-subtle">
+            <h3>Online Multiplayer</h3>
+            <p>Planned for later. The current app includes a coming-soon screen, while active play is singleplayer or local pass and play.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ====================================================================
-         About Compiled Section
-         ==================================================================== -->
-    <section id="about" class="section" aria-labelledby="about-heading">
+    <section id="screenshots" class="section section-muted">
       <div class="container">
-        <div class="about-grid">
-          <div class="about-text">
-            <div class="terminal-badge">ORIGIN // RETRO COMPUTING &amp; TABLETOP</div>
-            <h2 id="about-heading" class="section-title">About CompiledAndroid</h2>
-            <p>
-              <strong>CompiledAndroid</strong> is an <strong>Expo / React Native</strong> mobile application bringing the tactical depth of <em>Compiled</em> to phones and tablets. Built as a tribute to vintage computer hardware and deduction board games, it challenges players to manipulate a shared signed 4-bit CPU while concealing their private hands and objectives.
-            </p>
-            <p>
-              Every turn is an architectural dance: place an assembly card onto the circular memory loop, advance your Program Counter, run opcodes that alter the global registers, and race to fulfill your private mission. With local Pass &amp; Play turn handoffs, an adaptive AI opponent that never cheats on hidden info, an in-app Card Dictionary, and an interactive 11-step academy, CompiledAndroid makes low-level computing concepts thrilling and accessible.
-            </p>
-            <p>
-              Offline-first, ad-free, and engineered for tactile strategy: prove your mastery over the shared processor.
-            </p>
-            <div style="margin-top: 1.75rem;">
-              <a href="https://github.com/axyl-casc/CompiledWebsite" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-right: 6px;">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-                </svg>
-                View Repository on GitHub
-              </a>
-            </div>
-          </div>
+        <div class="section-heading">
+          <p class="eyebrow">Screenshots</p>
+          <h2>The actual Android interface.</h2>
+        </div>
 
-          <aside class="about-card" aria-label="Game technical specifications">
-            <div class="about-card-banner">
-              <img src="img/logo_with_text.png" alt="Compiled Logo" class="about-logo-img" width="354" height="190" loading="lazy">
-            </div>
-            <div class="about-card-head">
-              <span>// SYSTEM PROFILE: COMPILED ANDROID</span>
-            </div>
-            <ul class="about-spec-list">
-              <li>
-                <span class="about-spec-label">Engine / Framework:</span>
-                <span class="about-spec-value">Expo / React Native</span>
-              </li>
-              <li>
-                <span class="about-spec-label">CPU Architecture:</span>
-                <span class="about-spec-value">Custom Signed 4-Bit Virtual CPU</span>
-              </li>
-              <li>
-                <span class="about-spec-label">Data Registers:</span>
-                <span class="about-spec-value">4 (R0, R1, R2, R3)</span>
-              </li>
-              <li>
-                <span class="about-spec-label">Status Flags:</span>
-                <span class="about-spec-value">4 (Z, N, C, V)</span>
-              </li>
-              <li>
-                <span class="about-spec-label">Arithmetic Range:</span>
-                <span class="about-spec-value">Signed 4-Bit Wrap (-8..+7)</span>
-              </li>
-              <li>
-                <span class="about-spec-label">Board Memory Sizes:</span>
-                <span class="about-spec-value">12, 16, or 20 Slots (Circular)</span>
-              </li>
-              <li>
-                <span class="about-spec-label">Instruction Cap:</span>
-                <span class="about-spec-value">5 per turn max</span>
-              </li>
-              <li>
-                <span class="about-spec-label">Singleplayer Modes:</span>
-                <span class="about-spec-value">1–3 CPU (Easy / Normal / Hard)</span>
-              </li>
-              <li>
-                <span class="about-spec-label">Local Multiplayer:</span>
-                <span class="about-spec-value">2–4 Players (Pass &amp; Play)</span>
-              </li>
-              <li>
-                <span class="about-spec-label">Turn Privacy:</span>
-                <span class="about-spec-value">Handoff Privacy Shield</span>
-              </li>
-              <li>
-                <span class="about-spec-label">Number Formats:</span>
-                <span class="about-spec-value">DEC, HEX, and BIN Inspector</span>
-              </li>
-              <li>
-                <span class="about-spec-label">Online Multiplayer:</span>
-                <span class="about-spec-value" style="color: var(--amber);">Coming Soon (Screen active)</span>
-              </li>
-              <li>
-                <span class="about-spec-label">Monetization:</span>
-                <span class="about-spec-value" style="color: var(--green);">Zero Ads · Offline-First</span>
-              </li>
-            </ul>
-          </aside>
+        <div class="screenshots-gallery">
+          <button class="screenshot-card" type="button" data-screenshot-src="img/main_menu.png" data-screenshot-title="Main Menu" data-screenshot-desc="The main entry point for tutorial, singleplayer, pass and play, card dictionary, and settings.">
+            <img src="img/main_menu.png" alt="Compiled Android main menu" width="405" height="906" loading="lazy">
+            <span>Main menu</span>
+          </button>
+          <button class="screenshot-card" type="button" data-screenshot-src="img/play_tab_1.png" data-screenshot-title="Command Deck" data-screenshot-desc="Your private objective and command cards sit beside the public CPU state.">
+            <img src="img/play_tab_1.png" alt="Compiled command deck screen" width="404" height="904" loading="lazy">
+            <span>Command deck</span>
+          </button>
+          <button class="screenshot-card" type="button" data-screenshot-src="img/play_tab_2.png" data-screenshot-title="Program Board" data-screenshot-desc="A 12-slot board at the start of a match, with player Program Counters around the loop.">
+            <img src="img/play_tab_2.png" alt="Compiled 12-slot program board" width="404" height="904" loading="lazy">
+            <span>12-slot board</span>
+          </button>
+          <button class="screenshot-card" type="button" data-screenshot-src="img/play_tab_3.png" data-screenshot-title="Large Board Match" data-screenshot-desc="A 20-slot board after several turns, with branches, swaps, bitwise cards, and private objective pressure.">
+            <img src="img/play_tab_3.png" alt="Compiled 20-slot program board" width="404" height="904" loading="lazy">
+            <span>20-slot board</span>
+          </button>
+          <button class="screenshot-card" type="button" data-screenshot-src="img/tutorial_section.png" data-screenshot-title="Tutorial" data-screenshot-desc="The guided tutorial explains CPU registers, cards, memory, running, branching, and objectives.">
+            <img src="img/tutorial_section.png" alt="Compiled tutorial screen" width="405" height="906" loading="lazy">
+            <span>Tutorial</span>
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- ====================================================================
-         Download / Android Callout Section
-         ==================================================================== -->
-    <section id="download" class="section download-section" aria-labelledby="download-heading">
-      <div class="container">
-        <div class="download-box">
-          <svg class="download-icon-android" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4483.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.997-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.4114 13.8533 8.0833 12 8.0833s-3.5902.3281-5.1365.8664L4.8412 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.997 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396" />
-          </svg>
-
-          <h2 id="download-heading" class="download-title">Get Compiled on Android</h2>
-          <p class="download-lead">
-            Experience the tactical challenge of assembly-driven tabletop strategy anywhere. Ready for your phone and tablet with zero advertising interruptions.
+    <section id="details" class="section">
+      <div class="container detail-layout">
+        <div>
+          <p class="eyebrow">Instruction set</p>
+          <h2>Small cards, exact effects.</h2>
+          <p>
+            Cards are structured instructions, so you are choosing specific changes rather than vague actions. Immediate values range from <code>-5</code> to <code>+5</code>, branches move <code>-3</code> to <code>+3</code>, and each player holds five cards.
           </p>
-
-          <div class="download-actions">
-            <!-- Main Google Play Download Button -->
-            <!-- PLACEHOLDER LINK: update with official store URL when published -->
-            <a href="https://play.google.com/store/apps/details?id=com.axylcasc.compiled" class="btn btn-play-store" target="_blank" rel="noopener noreferrer" aria-label="Download Compiled on Google Play">
-              <svg class="btn-play-icon" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true">
-                <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z" />
-              </svg>
-              <div class="btn-play-text">
-                <span class="btn-play-eyebrow">DOWNLOAD ON</span>
-                <span class="btn-play-title">Google Play</span>
-              </div>
-            </a>
-          </div>
-
-          <div class="download-specs">
-            <div class="download-spec-item">Android 8.0 (Oreo) and above</div>
-            <div class="download-spec-item">No internet required for gameplay</div>
-            <div class="download-spec-item">Zero tracking or third-party ads</div>
+          <div class="opcode-cloud" aria-label="Available instructions">
+            <span>MOVE</span>
+            <span>ADD</span>
+            <span>SUB</span>
+            <span>AND</span>
+            <span>OR</span>
+            <span>XOR</span>
+            <span>MUL</span>
+            <span>INC</span>
+            <span>DEC</span>
+            <span>NEG</span>
+            <span>CLR</span>
+            <span>NOT</span>
+            <span>LSL</span>
+            <span>LSR</span>
+            <span>ROL</span>
+            <span>ROR</span>
+            <span>SWAP</span>
+            <span>BRA</span>
+            <span>NOP</span>
           </div>
         </div>
+
+        <aside class="spec-panel" aria-label="Android app details">
+          <img src="img/logo_with_text.png" alt="Compiled logo" width="354" height="190" loading="lazy">
+          <dl>
+            <div>
+              <dt>Platform</dt>
+              <dd>Android</dd>
+            </div>
+            <div>
+              <dt>App version</dt>
+              <dd>1.0.0</dd>
+            </div>
+            <div>
+              <dt>Package</dt>
+              <dd>com.compiled.game</dd>
+            </div>
+            <div>
+              <dt>Framework</dt>
+              <dd>Expo / React Native</dd>
+            </div>
+            <div>
+              <dt>Orientation</dt>
+              <dd>Portrait</dd>
+            </div>
+            <div>
+              <dt>Active play</dt>
+              <dd>Singleplayer and local pass and play</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="download section-tight">
+      <div class="container download-layout">
+        <div>
+          <p class="eyebrow">Android release</p>
+          <h2>Ready to program the board?</h2>
+          <p>The Google Play link uses the Android package declared by the app build. If the listing is still rolling out, check back once publication is complete.</p>
+        </div>
+        <a class="button" href="https://play.google.com/store/apps/details?id=com.compiled.game" target="_blank" rel="noopener noreferrer">Open Google Play</a>
       </div>
     </section>
   </main>
 
-  <!-- ====================================================================
-       Footer
-       ==================================================================== -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="img/logo_with_text.png" alt="Compiled Logo" class="footer-logo-img" width="354" height="190" loading="lazy">
-          <span class="brand-logo"><span class="brand-prompt">&gt;_</span>COMPILED</span>
-          <p class="footer-tagline">
-            One program. Many agendas. The competitive assembly-language board game for Android.
-          </p>
-          <span class="footer-system-tag">SYS_STATUS: V1.0-ANDROID</span>
-        </div>
-
-        <div>
-          <h3 class="footer-col-title">Navigation</h3>
-          <ul class="footer-links">
-            <li><a href="#features" class="footer-link">Features</a></li>
-            <li><a href="#screenshots" class="footer-link">Screenshots</a></li>
-            <li><a href="#how-to-play" class="footer-link">How to Play</a></li>
-            <li><a href="#about" class="footer-link">About Compiled</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="footer-col-title">Legal &amp; Policy</h3>
-          <ul class="footer-links">
-            <li><a href="privacy.html" class="footer-link" style="color: var(--cyan);">Privacy Policy</a></li>
-            <li><a href="https://github.com/axyl-casc/CompiledWebsite" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
-            <li><a href="https://github.com/axyl-casc/CompiledWebsite/issues" class="footer-link" target="_blank" rel="noopener noreferrer">Issue Tracker</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="footer-col-title">Get the Game</h3>
-          <ul class="footer-links">
-            <li><a href="#download" class="footer-link">Google Play Store</a></li>
-            <li><span class="footer-link" style="color: var(--text-dim);">Android 8.0+</span></li>
-            <li><span class="footer-link" style="color: var(--text-dim);">Offline-First</span></li>
-          </ul>
-        </div>
+    <div class="container footer-layout">
+      <div>
+        <img class="footer-mark" src="img/logo_with_text.png" alt="Compiled" width="354" height="190" loading="lazy">
+        <p>One shared CPU. Many private agendas.</p>
       </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 Compiled. All rights reserved.</p>
-        <p><a href="#">Back to Top ↑</a></p>
-      </div>
+      <nav aria-label="Footer navigation">
+        <a href="#game">Game</a>
+        <a href="#modes">Modes</a>
+        <a href="#screenshots">Screens</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
     </div>
   </footer>
 
-  <!-- Screenshot Modal Dialog -->
   <dialog id="screenshot-dialog" class="screenshot-dialog" aria-labelledby="dialog-title">
     <div class="dialog-content">
-      <button type="button" class="dialog-close-btn" id="dialog-close" aria-label="Close dialog">✕</button>
-      <div class="dialog-media">
-        <img id="dialog-img" src="" alt="" class="dialog-img" loading="lazy">
-      </div>
-      <div class="dialog-meta">
-        <h3 id="dialog-title" class="dialog-title"></h3>
-        <p id="dialog-desc" class="dialog-desc"></p>
+      <button id="dialog-close" class="icon-button dialog-close" type="button" aria-label="Close screenshot">x</button>
+      <img id="dialog-img" src="" alt="" loading="lazy">
+      <div class="dialog-text">
+        <h3 id="dialog-title"></h3>
+        <p id="dialog-desc"></p>
       </div>
     </div>
   </dialog>
