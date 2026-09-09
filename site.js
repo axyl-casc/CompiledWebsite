@@ -65,39 +65,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const slides = [
     {
       src: "img/main_menu.jpeg",
-      alt: "Compiled Android main menu",
+      alt: "Compiled game menu",
       title: "Main menu",
-      desc: "The current main menu with Tutorial, Singleplayer, Pass & Play, Card Dictionary, and Settings."
+      desc: "Choose your challenge, learn the machine, or dive straight into the loop."
     },
     {
       src: "img/play_tab_1.jpeg",
-      alt: "Compiled command deck screen",
+      alt: "Compiled command deck",
       title: "Command deck",
-      desc: "A current eight-slot Program Board with the shared CPU, secret objective, and six-card command tray."
+      desc: "A shared loop, a tiny CPU, and a hand of commands waiting to cause trouble."
     },
     {
       src: "img/play_tab_2.jpeg",
-      alt: "Compiled Program Board with staged instructions",
+      alt: "Compiled program board with staged instructions",
       title: "Program Board",
-      desc: "The board after several placements, showing public instructions and private player objectives."
+      desc: "Public commands on the board, private objectives in your pocket, and plenty of room for a plot twist."
     },
     {
       src: "img/tutorial_section.jpeg",
-      alt: "Compiled tutorial directory",
-      title: "Tutorial directory",
-      desc: "The current 20-lesson curriculum, organized into four sections with visible completion progress."
+      alt: "Compiled tutorial lessons",
+      title: "Learn the machine",
+      desc: "Short lessons that turn four-bit confusion into clever little plans."
     },
     {
       src: "img/dictionary.jpeg",
-      alt: "Compiled card dictionary",
-      title: "Card dictionary",
-      desc: "The Basic card tier with syntax, categories, and links into full instruction details."
+      alt: "Compiled card reference",
+      title: "Meet the cards",
+      desc: "A closer look at the commands you can use to nudge, scramble, and redirect the machine."
     },
     {
       src: "img/passnplay.jpeg",
-      alt: "Compiled Pass & Play player roster setup",
-      title: "Pass & Play setup",
-      desc: "Configure two to four participants and choose Human or CPU control for each player."
+      alt: "Compiled pass and play",
+      title: "Pass & Play",
+      desc: "Pass the device around, hide your objective, and try to look innocent."
     }
   ];
   let activeSlide = 0;

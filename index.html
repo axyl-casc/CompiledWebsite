@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compiled - Android Board Game</title>
-  <meta name="description" content="Program a shared 4-bit CPU in Compiled for Android: 31 instructions, three card tiers, 20 tutorial lessons, solo CPU rivals, and local pass and play.">
-  <meta name="keywords" content="Compiled, Android board game, programming game, strategy game, pass and play, Expo React Native">
+  <title>Compiled - A Strategy Game for Android</title>
+  <meta name="description" content="Program a tiny computer, outsmart your rivals, and keep your secret objective hidden in Compiled, a strategy game for Android.">
+  <meta name="keywords" content="Compiled, Android board game, programming game, strategy game, pass and play">
   <link rel="icon" type="image/png" href="img/logo_with_text.png">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Compiled - Android Board Game">
-  <meta property="og:description" content="Build the program. Control the CPU. Compiled is a tactical Android board game with shared registers, private objectives, and local play.">
+  <meta property="og:title" content="Compiled - A Strategy Game for Android">
+  <meta property="og:description" content="Program a tiny computer, outsmart your rivals, and keep your secret objective hidden in Compiled.">
   <meta property="og:image" content="img/logo_with_text.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Compiled - Android Board Game">
-  <meta name="twitter:description" content="A tactical Android board game about one shared CPU and many private agendas.">
+  <meta name="twitter:title" content="Compiled - A Strategy Game for Android">
+  <meta name="twitter:description" content="A strategy game about one shared CPU and many secret plans.">
   <meta name="twitter:image" content="img/logo_with_text.png">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -35,14 +35,14 @@
         <ul id="nav-links" class="nav-links">
           <li><a href="#game">Game</a></li>
           <li><a href="#modes">Modes</a></li>
-          <li><a href="#screenshots">Screens</a></li>
-          <li><a href="#details">Details</a></li>
+          <li><a href="#screenshots">See it</a></li>
+          <li><a href="#details">Cards</a></li>
           <li><a href="#learn">Learn</a></li>
           <li><a href="privacy.html">Privacy</a></li>
         </ul>
       </nav>
 
-      <a class="button button-small nav-cta" href="https://play.google.com/store/apps/details?id=com.compiled.game" target="_blank" rel="noopener noreferrer">Closed testing</a>
+      <a class="button button-small nav-cta" href="https://play.google.com/store/apps/details?id=com.compiled.game" target="_blank" rel="noopener noreferrer">Join the test</a>
     </div>
   </header>
 
@@ -50,16 +50,16 @@
     <section class="hero section">
       <div class="container hero-layout">
         <div class="hero-copy">
-          <p class="eyebrow">Android strategy board game</p>
+          <p class="eyebrow">A tiny computer. A big game.</p>
           <h1>COMPILED</h1>
-          <p class="hero-line">Build the program. Control the CPU.</p>
+          <p class="hero-line">Program the loop. Outsmart the table.</p>
           <p class="hero-text">
-            Place instruction cards into a shared circular memory board, run a tiny 4-bit CPU, and complete both conditions of your secret objective. Explore signed and unsigned arithmetic across 31 instructions. Every player touches the same registers, so the move that helps you can also open the door for someone else.
+            Place instruction cards into a shared loop, fire up a tiny 4-bit CPU, and race to complete your secret objective. Every player can tinker with the same machine, so the move that helps you might also hand your rival the win.
           </p>
         </div>
 
-        <figure class="hero-device" aria-label="Compiled current Android main menu">
-          <img src="img/main_menu.jpeg" alt="Compiled current Android main menu with Tutorial, Singleplayer, Pass &amp; Play, Card Dictionary, and Settings" width="877" height="2048">
+        <figure class="hero-device" aria-label="Compiled game menu">
+          <img src="img/main_menu.jpeg" alt="Compiled game menu with ways to play, learn, and explore cards" width="877" height="2048">
         </figure>
       </div>
     </section>
@@ -68,19 +68,19 @@
       <div class="container fact-grid">
         <div>
           <strong>1-3 CPU rivals</strong>
-          <span>Easy, normal, or hard singleplayer</span>
+          <span>Pick your level of trouble</span>
         </div>
         <div>
           <strong>2-4 local players</strong>
-          <span>Pass and play on one Android device</span>
+          <span>Hand the device around</span>
         </div>
         <div>
           <strong>8, 12, or 16 slots</strong>
-          <span>Configurable circular program boards</span>
+          <span>Short loops, big consequences</span>
         </div>
         <div>
           <strong>Private objectives</strong>
-          <span>Victory checks only after your own run</span>
+          <span>Keep your plan secret</span>
         </div>
       </div>
     </section>
@@ -88,31 +88,31 @@
     <section id="game" class="section">
       <div class="container split">
         <div>
-          <p class="eyebrow">What the game is</p>
-          <h2>One shared machine, several hidden plans.</h2>
+          <p class="eyebrow">The idea</p>
+          <h2>One shared machine. Plenty of mischief.</h2>
           <p>
-            Compiled turns a programming idea into a board game. The board is a loop of memory slots. The cards are small instructions. The CPU has four shared data registers, <code>R0</code> through <code>R3</code>, and four status flags, <code>Z</code>, <code>N</code>, <code>C</code>, and <code>V</code>.
+            Compiled turns a tiny computer into a tactical playground. The board is a loop of memory slots, the cards are bite-sized commands, and the CPU has four shared registers waiting to be nudged, scrambled, or spectacularly misunderstood.
           </p>
           <p>
-            Your six-card hand and objective are private. The board and CPU are public. Stage one card, review it, then press Run to commit your move and refill your hand. You win when both conditions of your objective hold at the end of your own run.
+            Your cards and objective stay secret while the board and CPU stay public. Plant one instruction, hit Run, and see whether your clever plan survives contact with everyone else's plans. You win when both parts of your objective are true at the end of your run.
           </p>
         </div>
 
         <div class="mechanic-list" aria-label="Core mechanics">
           <article class="mechanic">
             <span>01</span>
-            <h3>Program the loop</h3>
-            <p>Overwrite memory slots with cards like <code>MOVE #3, R0</code>, <code>XCHG R2, R0</code>, or <code>BRA -2</code>.</p>
+            <h3>Plant your code</h3>
+            <p>Drop commands like <code>MOVE #3, R0</code>, <code>XCHG R2, R0</code>, or <code>BRA -2</code> into the loop.</p>
           </article>
           <article class="mechanic">
             <span>02</span>
-            <h3>Run the CPU</h3>
-            <p>Four-bit values read as signed <code>-8</code> to <code>+7</code> or unsigned <code>0</code> to <code>15</code>. Arithmetic wraps; empty slots execute <code>NOP</code> and stop the run.</p>
+            <h3>Let it rip</h3>
+            <p>Watch four-bit values flip, wrap, and surprise you. Empty slots play <code>NOP</code>, which is computer-speak for “nothing to see here.”</p>
           </article>
           <article class="mechanic">
             <span>03</span>
-            <h3>Keep your objective quiet</h3>
-            <p>Meet two conditions at once. Objectives specify Signed or Unsigned, and objective sums use full mathematical totals without four-bit wrapping.</p>
+            <h3>Hide your scheme</h3>
+            <p>Meet two conditions at once without giving away the game. A suspiciously helpful move is often the most dangerous one.</p>
           </article>
         </div>
       </div>
@@ -121,30 +121,30 @@
     <section class="section section-muted">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">Turn flow</p>
-          <h2>A turn is short. The consequences are not.</h2>
+          <p class="eyebrow">How a turn feels</p>
+          <h2>Every turn is a tiny plot twist.</h2>
         </div>
 
         <ol class="turn-flow">
           <li>
             <span>Stage</span>
-            <p>Swipe through six cards, three at a time. Choose a card and a memory slot in either order; occupied slots can be overwritten.</p>
+            <p>Choose a card and a spot in the loop. Overwrite an old command if you dare.</p>
           </li>
           <li>
             <span>Review</span>
-            <p>The tray switches to Ready to Run. Use Change Card to revise your choice, or Run to commit it and draw back up to six.</p>
+            <p>Take one last look at your plan, then commit it and draw a fresh hand.</p>
           </li>
           <li>
             <span>Advance</span>
-            <p>Your Program Counter moves one slot before execution begins.</p>
+            <p>The machine steps forward and starts following the trail you left behind.</p>
           </li>
           <li>
             <span>Execute</span>
-            <p>Register instructions end the run. <code>BRA</code> can chain up to five executed instructions before the turn stops.</p>
+            <p>Commands fire, branches bounce, and the CPU keeps going until the loop tells it to stop.</p>
           </li>
           <li>
             <span>Check</span>
-            <p>Only your objective is checked, after execution ends. Both conditions must be true together to win.</p>
+            <p>At the end, the machine checks your secret objective. Get both conditions right and claim the win.</p>
           </li>
         </ol>
       </div>
@@ -153,34 +153,34 @@
     <section id="modes" class="section">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">Modes in the app</p>
-          <h2>Built for solo puzzle fights and same-device play.</h2>
+          <p class="eyebrow">Ways to play</p>
+          <h2>Pick your kind of trouble.</h2>
         </div>
 
         <div class="mode-grid">
           <article class="mode-card">
             <h3>Singleplayer</h3>
-            <p>Choose one to three CPU rivals, an 8-, 12-, or 16-slot board, and Easy, Normal, or Hard difficulty. Hard adds lookahead and defensive play. Your setup is remembered for the next match.</p>
+            <p>Take on one to three CPU rivals. Choose your difficulty and see if you can beat a machine that is very good at noticing your tricks.</p>
           </article>
           <article class="mode-card">
             <h3>Pass and Play</h3>
-            <p>Set up two to four players on one device. Mix humans and CPU rivals, customize names and colors, and keep cards and objectives hidden during handoffs. Your roster, board size, and difficulty are saved.</p>
+            <p>Gather two to four players around one device. Pass it around, keep your cards hidden, and try not to look too pleased with your master plan.</p>
           </article>
           <article class="mode-card">
             <h3>Tutorial</h3>
-            <p>Work through 20 lessons in four sections, from number bases and CPU registers to branching and sabotage. Guided placement, card previews, diagrams, and Run controls stay together on the lesson page.</p>
+            <p>Learn the machine in 20 bite-sized lessons, then put your new powers to work with branching, sabotage, and a little glorious arithmetic chaos.</p>
           </article>
           <article class="mode-card">
             <h3>Card Dictionary</h3>
-            <p>Browse all 31 instructions, grouped by Basic, Intermediate, and Advanced tiers, with a System reference for NOP. Read operand syntax, status-flag effects, worked examples, and tactical notes.</p>
+            <p>Meet all 31 instructions, from simple moves to advanced commands that can turn a winning plan into an exciting disaster.</p>
           </article>
           <article class="mode-card">
             <h3>Settings</h3>
-            <p>Choose a card tier, signed or unsigned decimal, hex, or binary display, and Fast, Normal, or Slow execution. Toggle synthesized sound and haptic feedback, inspect register values with the converter, and manage saved lesson progress.</p>
+            <p>Choose how deep you want to go, how fast the machine runs, and whether your victories arrive with sound and buzzes.</p>
           </article>
           <article class="mode-card">
-            <h3>Smoother turns</h3>
-            <p>The board stays in place while you select cards. A compact turn display keeps the player queue and objective in view, and Android Back steps through setup, closes panels, and confirms match exits.</p>
+            <h3>Secret objectives</h3>
+            <p>Everyone sees the same machine, but everyone wants something different. Read the table, nudge the numbers, and smile innocently.</p>
           </article>
         </div>
       </div>
@@ -189,29 +189,29 @@
     <section id="screenshots" class="section section-muted">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">Screenshot archive</p>
-          <h2>A look at the earlier app.</h2>
-          <p class="screenshot-note">Fresh captures from the current Android build show the eight-slot board, six-card tray, 20-lesson tutorial, Basic dictionary, and Pass &amp; Play roster setup.</p>
+          <p class="eyebrow">See it in action</p>
+          <h2>Peek inside the machine.</h2>
+          <p class="screenshot-note">Watch the loop fill up, commands collide, and secret plans take shape.</p>
         </div>
 
-        <div class="screenshot-carousel" aria-roledescription="carousel" aria-label="Compiled app screenshots">
+        <div class="screenshot-carousel" aria-roledescription="carousel" aria-label="Compiled game scenes">
           <div class="slide-frame">
             <figure class="screenshot-slide">
-              <img id="carousel-image" src="img/main_menu.jpeg" alt="Compiled Android main menu" width="877" height="2048">
+              <img id="carousel-image" src="img/main_menu.jpeg" alt="Compiled game menu" width="877" height="2048">
               <figcaption>
                 <strong id="carousel-title">Main menu</strong>
-                <span id="carousel-desc">The current main menu with Tutorial, Singleplayer, Pass &amp; Play, Card Dictionary, and Settings.</span>
+                <span id="carousel-desc">Choose your challenge, learn the machine, or dive straight into the loop.</span>
               </figcaption>
             </figure>
           </div>
 
-          <div class="carousel-dots" role="group" aria-label="Choose a current app screenshot">
+          <div class="carousel-dots" role="group" aria-label="Choose a Compiled scene">
             <button class="active" type="button" aria-label="Show Main menu screenshot" aria-selected="true"></button>
             <button type="button" aria-label="Show Program Board screenshot" aria-selected="false"></button>
             <button type="button" aria-label="Show Program Board in play screenshot" aria-selected="false"></button>
-            <button type="button" aria-label="Show Tutorial directory screenshot" aria-selected="false"></button>
-            <button type="button" aria-label="Show Card Dictionary screenshot" aria-selected="false"></button>
-            <button type="button" aria-label="Show Pass and Play setup screenshot" aria-selected="false"></button>
+            <button type="button" aria-label="Show Learn the machine scene" aria-selected="false"></button>
+            <button type="button" aria-label="Show Meet the cards scene" aria-selected="false"></button>
+            <button type="button" aria-label="Show Pass and Play scene" aria-selected="false"></button>
           </div>
         </div>
       </div>
@@ -220,10 +220,10 @@
     <section id="details" class="section">
       <div class="container detail-layout">
         <div>
-          <p class="eyebrow">Instruction set</p>
-          <h2>Small cards, exact effects.</h2>
+          <p class="eyebrow">The cards</p>
+          <h2>Small cards. Big consequences.</h2>
           <p>
-            Start with nine Basic instructions, add ten more at Intermediate, or play with all 31 at Advanced. Your chosen tier applies to every player's starting hand and replacement draws, including CPU rivals.
+            Start with the basics, add trickier commands as you learn, or unleash the full deck of 31 instructions when you're ready for maximum mischief.
           </p>
           <article class="card-tier" data-card-level="basic">
             <h3>Basic <span>9 instructions · Start here</span></h3>
@@ -254,7 +254,7 @@
           <ul>
             <li>Signed immediate values: -5 to +5, excluding zero. Unsigned immediates: 1 to 15.</li>
             <li>Binary operations can also read a source register instead of an immediate value.</li>
-            <li><code>XCHG</code> is the current name for the exchange operation. <code>REV</code> reverses all four bits.</li>
+            <li><code>XCHG</code> swaps two registers. <code>REV</code> reverses all four bits.</li>
             <li><code>BRA</code> jumps -3 to +3 slots, excluding zero. Branch chains stop at the five-instruction limit.</li>
             <li><code>NOP</code> stops a run without changing registers or flags. It can be dealt as a card as well as encountered on empty slots.</li>
           </ul>
@@ -265,8 +265,8 @@
     <section id="learn" class="section section-muted">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">20 lessons · Four sections</p>
-          <h2>Learn the machine, then outthink the table.</h2>
+          <p class="eyebrow">20 bite-sized lessons</p>
+          <h2>Learn the machine. Then outthink the table.</h2>
         </div>
         <div class="mode-grid">
           <article class="mode-card"><h3>01 · CPU &amp; core terms</h3><p>Nine lessons introduce the shared CPU, integers, number bases, signed and unsigned values, two's complement, registers, MOVE, arithmetic wraparound, and quick adjustments.</p></article>
@@ -280,10 +280,10 @@
     <section class="section">
       <div class="container split">
         <div>
-          <p class="eyebrow">Read the bits your way</p>
-          <h2>Four formats. One CPU.</h2>
-          <p>Switch between <strong>S-DEC</strong>, <strong>U-DEC</strong>, <strong>HEX</strong>, and <strong>BIN</strong>. Tap a data register to inspect the same bits in both decimal interpretations, hexadecimal, and binary. The register converter also lets you explore R0–R3 and the status flags.</p>
-          <p>Changing the display never changes execution or your objective. Signed arithmetic wraps from +7 to -8; unsigned arithmetic wraps from 15 to 0. Both keep the low four bits.</p>
+          <p class="eyebrow">The fun part of four bits</p>
+          <h2>Small numbers. Sneaky possibilities.</h2>
+          <p>Read the machine in signed numbers, unsigned numbers, hexadecimal, or binary. The bits stay the same; what they mean can change everything.</p>
+          <p>Push a value past its limit and watch it wrap around. In Compiled, even a tiny number can start a very large argument.</p>
         </div>
         <div class="mechanic-list">
           <article class="mechanic"><span>Z/N</span><h3>Read the result</h3><p>Z means the result is zero. N mirrors the top bit: negative when read as signed, or 8–15 when read as unsigned.</p></article>
@@ -296,11 +296,11 @@
     <section class="download section-tight">
       <div class="container download-layout">
         <div>
-          <p class="eyebrow">Android release</p>
-          <h2>Ready to program the board?</h2>
-          <p>Compiled is currently in closed testing on Google Play. Use the testing invitation or enrolled account to install the Android build.</p>
+          <p class="eyebrow">Come play</p>
+          <h2>Ready to make a little trouble?</h2>
+          <p>Compiled is in closed testing on Google Play. Join the test, grab a hand of cards, and see what your tiny machine can do.</p>
         </div>
-        <a class="button" href="https://play.google.com/store/apps/details?id=com.compiled.game" target="_blank" rel="noopener noreferrer">Open closed testing</a>
+        <a class="button" href="https://play.google.com/store/apps/details?id=com.compiled.game" target="_blank" rel="noopener noreferrer">Join the test</a>
       </div>
     </section>
   </main>
@@ -308,13 +308,13 @@
   <footer class="site-footer">
     <div class="container footer-layout">
       <div>
-        <p>One shared CPU. Many private agendas.</p>
+        <p>One shared CPU. Infinite ways to cause trouble.</p>
       </div>
       <nav aria-label="Footer navigation">
         <a href="#game">Game</a>
         <a href="#modes">Modes</a>
         <a href="#learn">Learn</a>
-        <a href="#screenshots">Screens</a>
+        <a href="#screenshots">See it</a>
         <a href="privacy.html">Privacy</a>
       </nav>
     </div>
