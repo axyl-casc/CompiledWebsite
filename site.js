@@ -64,34 +64,40 @@ document.addEventListener("DOMContentLoaded", () => {
   const carouselDots = document.querySelectorAll(".carousel-dots button");
   const slides = [
     {
-      src: "img/main_menu.png",
+      src: "img/main_menu.jpeg",
       alt: "Compiled Android main menu",
       title: "Main menu",
-      desc: "The main entry point for tutorial, singleplayer, pass and play, card dictionary, and settings."
+      desc: "The current main menu with Tutorial, Singleplayer, Pass & Play, Card Dictionary, and Settings."
     },
     {
-      src: "img/play_tab_1.png",
+      src: "img/play_tab_1.jpeg",
       alt: "Compiled command deck screen",
       title: "Command deck",
-      desc: "Your private objective and command cards sit beside the public CPU state."
+      desc: "A current eight-slot Program Board with the shared CPU, secret objective, and six-card command tray."
     },
     {
-      src: "img/play_tab_2.png",
-      alt: "Compiled 12-slot program board",
-      title: "12-slot board",
-      desc: "A 12-slot board at the start of a match, with player Program Counters around the loop."
+      src: "img/play_tab_2.jpeg",
+      alt: "Compiled Program Board with staged instructions",
+      title: "Program Board",
+      desc: "The board after several placements, showing public instructions and private player objectives."
     },
     {
-      src: "img/play_tab_3.png",
-      alt: "Compiled 20-slot program board",
-      title: "20-slot board",
-      desc: "A 20-slot board after several turns, with branches, swaps, bitwise cards, and private objective pressure."
+      src: "img/tutorial_section.jpeg",
+      alt: "Compiled tutorial directory",
+      title: "Tutorial directory",
+      desc: "The current 20-lesson curriculum, organized into four sections with visible completion progress."
     },
     {
-      src: "img/tutorial_section.png",
-      alt: "Compiled tutorial screen",
-      title: "Tutorial",
-      desc: "The guided tutorial explains CPU registers, cards, memory, running, branching, and objectives."
+      src: "img/dictionary.jpeg",
+      alt: "Compiled card dictionary",
+      title: "Card dictionary",
+      desc: "The Basic card tier with syntax, categories, and links into full instruction details."
+    },
+    {
+      src: "img/passnplay.jpeg",
+      alt: "Compiled Pass & Play player roster setup",
+      title: "Pass & Play setup",
+      desc: "Configure two to four participants and choose Human or CPU control for each player."
     }
   ];
   let activeSlide = 0;

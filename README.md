@@ -5,8 +5,8 @@ Static website for **Compiled**, the Android board game where players place inst
 ## What The Site Covers
 
 - The actual Android app premise: one shared CPU, one circular memory board, private hands, and private objectives.
-- Current game modes: singleplayer, pass and play, tutorial, card dictionary, and settings.
-- Accurate implementation details from the Android repo, including `com.compiled.game`, version `1.0.0`, Expo / React Native, portrait orientation, 12/16/20-slot boards, five-card hands, and the signed 4-bit register range.
+- Current game modes: singleplayer, pass and play, tutorial, card dictionary, and settings. The Android app is currently distributed through Google Play closed testing.
+- Accurate implementation details from the Android repo, including `com.compiled.game`, version `1.0.2`, Expo / React Native, portrait orientation, 8/12/16-slot boards, six-card hands, three card tiers, 31 instructions, 20 tutorial lessons, signed/unsigned 4-bit execution, and the current XCHG naming.
 - A concise privacy policy that avoids unsupported claims about analytics, ads, cloud sync, persistent statistics, or Google Play services beyond ordinary Play Store distribution.
 
 ## Files
@@ -15,11 +15,12 @@ Static website for **Compiled**, the Android board game where players place inst
 CompiledWebsite/
 ├── img/
 │   ├── logo_with_text.png
-│   ├── main_menu.png
-│   ├── play_tab_1.png
-│   ├── play_tab_2.png
-│   ├── play_tab_3.png
-│   └── tutorial_section.png
+│   ├── main_menu.jpeg
+│   ├── play_tab_1.jpeg
+│   ├── play_tab_2.jpeg
+│   ├── tutorial_section.jpeg
+│   ├── dictionary.jpeg
+│   └── passnplay.jpeg
 ├── index.html
 ├── privacy.html
 ├── privacy/

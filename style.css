@@ -319,6 +319,72 @@ code {
   font-size: clamp(1.04rem, 2vw, 1.22rem);
 }
 
+.cpu-preview {
+  justify-self: center;
+  width: min(100%, 360px);
+  border: 1px solid var(--cyan);
+  border-radius: 10px;
+  background: linear-gradient(155deg, rgba(16, 38, 44, 0.98), rgba(5, 16, 19, 0.96));
+  box-shadow: var(--shadow), 0 0 34px rgba(66, 222, 211, 0.12);
+  padding: clamp(1.4rem, 4vw, 2rem);
+}
+
+.cpu-preview h2 {
+  max-width: none;
+  color: var(--text);
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.bit-pattern {
+  display: flex;
+  gap: 0.45rem;
+  margin: 1.5rem 0 1.25rem;
+}
+
+.bit-pattern span {
+  display: grid;
+  width: 3rem;
+  height: 3.5rem;
+  place-items: center;
+  border: 1px solid var(--yellow);
+  border-radius: 5px;
+  background: #061114;
+  color: var(--yellow);
+  font-family: var(--mono);
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.register-readings {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+  margin: 0 0 1.25rem;
+}
+
+.register-readings div {
+  border-left: 2px solid var(--pink);
+  padding-left: 0.7rem;
+}
+
+.register-readings dt {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.register-readings dd {
+  margin: 0.15rem 0 0;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 1.35rem;
+  font-weight: 900;
+}
+
+.cpu-preview figcaption {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
 .hero-device {
   position: relative;
   margin: 0;
@@ -436,6 +502,11 @@ code {
 
 .section-heading {
   margin-bottom: 2rem;
+}
+
+.screenshot-note {
+  max-width: 60rem;
+  margin-top: 0.8rem;
 }
 
 .section-heading h2 {
@@ -582,6 +653,45 @@ code {
   font-size: 0.86rem;
   font-weight: 900;
   padding: 0.42rem 0.58rem;
+}
+
+.card-tier {
+  margin-top: 1.25rem;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  background: rgba(16, 38, 44, 0.58);
+  padding: 1.1rem 1.2rem;
+}
+
+.card-tier h3 {
+  color: var(--cyan);
+}
+
+.card-tier h3 span {
+  color: var(--yellow);
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-left: 0.5rem;
+}
+
+.card-tier p {
+  margin-top: 0.55rem;
+  font-size: 0.95rem;
+}
+
+.card-tier .opcode-cloud {
+  margin-top: 0.8rem;
+}
+
+.tier-note {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.tier-note strong {
+  color: var(--yellow);
 }
 
 .spec-panel {
