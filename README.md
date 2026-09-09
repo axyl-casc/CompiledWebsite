@@ -1,45 +1,32 @@
 # Compiled Website
 
-Static website for **Compiled**, the Android board game where players place instruction cards into a shared program loop and race to satisfy private objectives.
+Informational website for **Compiled**, the Android strategy board game. Player-facing copy is based on the sibling `CompiledAndroid/README.md`.
 
-## What The Site Covers
+## Content
 
-- The actual Android app premise: one shared CPU, one circular memory board, private hands, and private objectives.
-- Current game modes: singleplayer, pass and play, tutorial, card dictionary, and settings. The Android app is currently distributed through Google Play closed testing.
-- Accurate implementation details from the Android repo, including `com.compiled.game`, version `1.0.2`, Expo / React Native, portrait orientation, 8/12/16-slot boards, six-card hands, three card tiers, 31 instructions, 20 tutorial lessons, signed/unsigned 4-bit execution, and the current XCHG naming.
-- A concise privacy policy that avoids unsupported claims about analytics, ads, cloud sync, persistent statistics, or Google Play services beyond ordinary Play Store distribution.
+- A plain-language introduction to the shared board and secret objectives.
+- A three-step explanation of a turn: choose a card, run it, and check your objective.
+- Singleplayer against one to three computer rivals, with Easy through Expert difficulty.
+- Pass and play for two to four players on one device, with optional computer opponents.
+- Three board sizes and Basic, Intermediate, and Advanced card sets.
+- Twenty interactive lessons, the card dictionary, and player preferences.
+- Six existing app screenshots with an accessible full-size viewer.
+- The existing Google Play closed-test link, contact address, and privacy policy.
+
+The homepage focuses on what players can do. Instruction syntax, CPU internals, development tools, and build details belong in the app documentation.
 
 ## Files
 
-```text
-CompiledWebsite/
-├── img/
-│   ├── logo_with_text.png
-│   ├── main_menu.jpeg
-│   ├── play_tab_1.jpeg
-│   ├── play_tab_2.jpeg
-│   ├── tutorial_section.jpeg
-│   ├── dictionary.jpeg
-│   └── passnplay.jpeg
-├── index.html
-├── privacy.html
-├── privacy/
-│   └── index.html
-├── site.js
-├── style.css
-└── README.md
-```
+- `index.html`: game overview.
+- `style.css`: responsive shared styles.
+- `site.js`: screenshot viewer; image links also work without JavaScript.
+- `img/`: original app screenshots and logo.
+- `privacy.html` and `privacy/index.html`: equivalent privacy pages, with relative links for both URLs.
 
-## Local Preview
+## Preview and deployment
 
-The site is plain HTML, CSS, and JavaScript. Open `index.html` directly in a browser, or serve the folder with any small static server.
+Plain HTML, CSS, and JavaScript; no dependencies or build step. Open `index.html` directly, or serve this folder with a static HTTP server.
 
-```bash
-python -m http.server 8000
-```
+The repository can be published from its root using GitHub Pages or another static host. Keep both privacy URLs available when publishing.
 
-Then visit `http://localhost:8000/`.
-
-## Deployment
-
-This repository can be published from its root with GitHub Pages or any static host. No build step is required.
+When app features or availability change, update the homepage from the Android README and replace screenshots only with actual app captures.

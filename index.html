@@ -3,334 +3,150 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compiled - A Strategy Game for Android</title>
-  <meta name="description" content="Program a tiny computer, outsmart your rivals, and keep your secret objective hidden in Compiled, a strategy game for Android.">
-  <meta name="keywords" content="Compiled, Android board game, programming game, strategy game, pass and play">
+  <title>Compiled — A Strategy Board Game for Android</title>
+  <meta name="description" content="Get to know Compiled: a turn-based strategy board game with secret objectives, solo matches, local pass and play, 31 instruction cards, and guided lessons.">
+  <meta name="theme-color" content="#091416">
   <link rel="icon" type="image/png" href="img/logo_with_text.png">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Compiled - A Strategy Game for Android">
-  <meta property="og:description" content="Program a tiny computer, outsmart your rivals, and keep your secret objective hidden in Compiled.">
+  <meta property="og:title" content="Compiled — A Strategy Board Game for Android">
+  <meta property="og:description" content="One shared board. Your secret plan. Discover the cards, game modes, and guided lessons in Compiled.">
   <meta property="og:image" content="img/logo_with_text.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Compiled - A Strategy Game for Android">
-  <meta name="twitter:description" content="A strategy game about one shared CPU and many secret plans.">
+  <meta name="twitter:title" content="Compiled — A Strategy Board Game for Android">
+  <meta name="twitter:description" content="One shared board. Your secret plan. A turn-based strategy game for Android.">
   <meta name="twitter:image" content="img/logo_with_text.png">
   <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="#" aria-label="Compiled home">
-        <span class="brand-prompt" aria-hidden="true">&gt;_</span>
-        <span class="brand-name">COMPILED</span>
-      </a>
-
-      <button id="mobile-toggle" class="icon-button mobile-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation">
-        <span aria-hidden="true">=</span>
-      </button>
-
+      <a class="brand" href="index.html" aria-label="Compiled home"><span class="brand-prompt" aria-hidden="true">&gt;_</span><span class="brand-name">COMPILED</span></a>
       <nav aria-label="Primary navigation">
-        <ul id="nav-links" class="nav-links">
-          <li><a href="#game">Game</a></li>
-          <li><a href="#modes">Modes</a></li>
-          <li><a href="#screenshots">See it</a></li>
-          <li><a href="#details">Cards</a></li>
-          <li><a href="#learn">Learn</a></li>
-          <li><a href="privacy.html">Privacy</a></li>
+        <ul class="nav-links">
+          <li><a href="#game">How to play</a></li>
+          <li><a href="#modes">In the game</a></li>
+          <li><a href="#screenshots">Screenshots</a></li>
         </ul>
       </nav>
-
-      <a class="button button-small nav-cta" href="https://play.google.com/store/apps/details?id=com.compiled.game" target="_blank" rel="noopener noreferrer">Join the test</a>
     </div>
   </header>
 
   <main id="main-content">
-    <section class="hero section">
+    <section class="hero">
       <div class="container hero-layout">
         <div class="hero-copy">
-          <p class="eyebrow">A tiny computer. A big game.</p>
-          <h1>COMPILED</h1>
-          <p class="hero-line">Program the loop. Outsmart the table.</p>
-          <p class="hero-text">
-            Place instruction cards into a shared loop, fire up a tiny 4-bit CPU, and race to complete your secret objective. Every player can tinker with the same machine, so the move that helps you might also hand your rival the win.
-          </p>
+          <p class="eyebrow">A strategy board game for Android</p>
+          <h1>One shared board.<br><span>Your secret plan.</span></h1>
+          <p class="hero-text">Compiled is a turn-based game where you build a program with cards. Everyone changes the same board, but each player has a different hidden objective. Complete yours first to win.</p>
+          <div class="hero-actions"><a class="button" href="#game">Discover the game <span aria-hidden="true">↓</span></a><a class="text-link" href="#screenshots">See the app</a></div>
+          <p class="hero-note">Play solo against computer rivals or share a device with friends.</p>
         </div>
-
-        <figure class="hero-device" aria-label="Compiled game menu">
-          <img src="img/main_menu.jpeg" alt="Compiled game menu with ways to play, learn, and explore cards" width="877" height="2048">
+        <figure class="hero-device">
+          <a class="screenshot-link" href="img/play_tab_2.jpeg" data-title="The shared board" data-description="Your cards and objective are private. The board and its values are shared by everyone." aria-label="Enlarge the Compiled game board screenshot">
+            <img src="img/play_tab_2.jpeg" alt="Compiled game board showing placed cards, shared values, a secret objective, and the player's hand" width="877" height="2048" fetchpriority="high">
+          </a>
+          <figcaption>Inside Compiled · The shared board</figcaption>
         </figure>
       </div>
     </section>
 
-    <section class="facts section-tight" aria-label="Game facts">
-      <div class="container fact-grid">
-        <div>
-          <strong>1-3 CPU rivals</strong>
-          <span>Pick your level of trouble</span>
-        </div>
-        <div>
-          <strong>2-4 local players</strong>
-          <span>Hand the device around</span>
-        </div>
-        <div>
-          <strong>8, 12, or 16 slots</strong>
-          <span>Short loops, big consequences</span>
-        </div>
-        <div>
-          <strong>Private objectives</strong>
-          <span>Keep your plan secret</span>
-        </div>
-      </div>
-    </section>
+    <div class="facts" aria-label="At a glance">
+      <dl class="container fact-grid">
+        <div><dt>Players per match</dt><dd>2–4</dd></div>
+        <div><dt>Instruction cards</dt><dd>31</dd></div>
+        <div><dt>Card set levels</dt><dd>3</dd></div>
+        <div><dt>Guided lessons</dt><dd>20</dd></div>
+      </dl>
+    </div>
 
     <section id="game" class="section">
-      <div class="container split">
-        <div>
-          <p class="eyebrow">The idea</p>
-          <h2>One shared machine. Plenty of mischief.</h2>
-          <p>
-            Compiled turns a tiny computer into a tactical playground. The board is a loop of memory slots, the cards are bite-sized commands, and the CPU has four shared registers waiting to be nudged, scrambled, or spectacularly misunderstood.
-          </p>
-          <p>
-            Your cards and objective stay secret while the board and CPU stay public. Plant one instruction, hit Run, and see whether your clever plan survives contact with everyone else's plans. You win when both parts of your objective are true at the end of your run.
-          </p>
-        </div>
-
-        <div class="mechanic-list" aria-label="Core mechanics">
-          <article class="mechanic">
-            <span>01</span>
-            <h3>Plant your code</h3>
-            <p>Drop commands like <code>MOVE #3, R0</code>, <code>XCHG R2, R0</code>, or <code>BRA -2</code> into the loop.</p>
-          </article>
-          <article class="mechanic">
-            <span>02</span>
-            <h3>Let it rip</h3>
-            <p>Watch four-bit values flip, wrap, and surprise you. Empty slots play <code>NOP</code>, which is computer-speak for “nothing to see here.”</p>
-          </article>
-          <article class="mechanic">
-            <span>03</span>
-            <h3>Hide your scheme</h3>
-            <p>Meet two conditions at once without giving away the game. A suspiciously helpful move is often the most dangerous one.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-muted">
       <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">How a turn feels</p>
-          <h2>Every turn is a tiny plot twist.</h2>
+        <div class="section-heading split-heading">
+          <div><p class="eyebrow">How to play</p><h2>Place a card.<br>Change the game.</h2></div>
+          <p>The cards are commands that change numbers or redirect play around a loop. A card you place can help you now and change what happens on someone else’s turn.</p>
         </div>
-
         <ol class="turn-flow">
-          <li>
-            <span>Stage</span>
-            <p>Choose a card and a spot in the loop. Overwrite an old command if you dare.</p>
-          </li>
-          <li>
-            <span>Review</span>
-            <p>Take one last look at your plan, then commit it and draw a fresh hand.</p>
-          </li>
-          <li>
-            <span>Advance</span>
-            <p>The machine steps forward and starts following the trail you left behind.</p>
-          </li>
-          <li>
-            <span>Execute</span>
-            <p>Commands fire, branches bounce, and the CPU keeps going until the loop tells it to stop.</p>
-          </li>
-          <li>
-            <span>Check</span>
-            <p>At the end, the machine checks your secret objective. Get both conditions right and claim the win.</p>
-          </li>
+          <li><span class="step-number" aria-hidden="true">01</span><h3>Choose your move</h3><p>Pick one of the six cards in your hand. Place it in an empty space or replace a card already on the board.</p></li>
+          <li><span class="step-number" aria-hidden="true">02</span><h3>Press Run</h3><p>Your marker moves through the loop and follows its cards, carrying out up to five commands. You draw a replacement card for your hand.</p></li>
+          <li><span class="step-number" aria-hidden="true">03</span><h3>Reach your objective</h3><p>Meet both parts of your secret objective at the end of your run to win. Plan ahead as other players change the board between your turns.</p></li>
         </ol>
       </div>
     </section>
 
-    <section id="modes" class="section">
+    <section id="modes" class="section section-muted">
       <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Ways to play</p>
-          <h2>Pick your kind of trouble.</h2>
-        </div>
-
+        <div class="section-heading"><p class="eyebrow">Ways to play</p><h2>Solo or around the table.</h2></div>
         <div class="mode-grid">
-          <article class="mode-card">
-            <h3>Singleplayer</h3>
-            <p>Take on one to three CPU rivals. Choose your difficulty and see if you can beat a machine that is very good at noticing your tricks.</p>
-          </article>
-          <article class="mode-card">
-            <h3>Pass and Play</h3>
-            <p>Gather two to four players around one device. Pass it around, keep your cards hidden, and try not to look too pleased with your master plan.</p>
-          </article>
-          <article class="mode-card">
-            <h3>Tutorial</h3>
-            <p>Learn the machine in 20 bite-sized lessons, then put your new powers to work with branching, sabotage, and a little glorious arithmetic chaos.</p>
-          </article>
-          <article class="mode-card">
-            <h3>Card Dictionary</h3>
-            <p>Meet all 31 instructions, from simple moves to advanced commands that can turn a winning plan into an exciting disaster.</p>
-          </article>
-          <article class="mode-card">
-            <h3>Settings</h3>
-            <p>Choose how deep you want to go, how fast the machine runs, and whether your victories arrive with sound and buzzes.</p>
-          </article>
-          <article class="mode-card">
-            <h3>Secret objectives</h3>
-            <p>Everyone sees the same machine, but everyone wants something different. Read the table, nudge the numbers, and smile innocently.</p>
-          </article>
+          <article class="mode-card"><p class="mode-label">You + computer rivals</p><h3>Singleplayer</h3><p>Take on one to three computer opponents. Choose Easy, Normal, Hard, or Expert difficulty to find the challenge you want.</p></article>
+          <article class="mode-card"><p class="mode-label">One device · 2–4 players</p><h3>Pass and play</h3><p>Take turns with friends on the same device, with computer opponents if you like. Handoff screens keep each player’s cards and objective hidden.</p></article>
         </div>
-      </div>
-    </section>
-
-    <section id="screenshots" class="section section-muted">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">See it in action</p>
-          <h2>Peek inside the machine.</h2>
-          <p class="screenshot-note">Watch the loop fill up, commands collide, and secret plans take shape.</p>
-        </div>
-
-        <div class="screenshot-carousel" aria-roledescription="carousel" aria-label="Compiled game scenes">
-          <div class="slide-frame">
-            <figure class="screenshot-slide">
-              <img id="carousel-image" src="img/main_menu.jpeg" alt="Compiled game menu" width="877" height="2048">
-              <figcaption>
-                <strong id="carousel-title">Main menu</strong>
-                <span id="carousel-desc">Choose your challenge, learn the machine, or dive straight into the loop.</span>
-              </figcaption>
-            </figure>
-          </div>
-
-          <div class="carousel-dots" role="group" aria-label="Choose a Compiled scene">
-            <button class="active" type="button" aria-label="Show Main menu screenshot" aria-selected="true"></button>
-            <button type="button" aria-label="Show Program Board screenshot" aria-selected="false"></button>
-            <button type="button" aria-label="Show Program Board in play screenshot" aria-selected="false"></button>
-            <button type="button" aria-label="Show Learn the machine scene" aria-selected="false"></button>
-            <button type="button" aria-label="Show Meet the cards scene" aria-selected="false"></button>
-            <button type="button" aria-label="Show Pass and Play scene" aria-selected="false"></button>
-          </div>
-        </div>
+        <p class="board-note"><strong>Make room for your strategy.</strong> Both modes offer small, medium, and large boards with 8, 12, or 16 spaces.</p>
       </div>
     </section>
 
     <section id="details" class="section">
-      <div class="container detail-layout">
-        <div>
-          <p class="eyebrow">The cards</p>
-          <h2>Small cards. Big consequences.</h2>
-          <p>
-            Start with the basics, add trickier commands as you learn, or unleash the full deck of 31 instructions when you're ready for maximum mischief.
-          </p>
-          <article class="card-tier" data-card-level="basic">
-            <h3>Basic <span>9 instructions · Start here</span></h3>
-            <p>Move, exchange, clear, and adjust register values. Use NOP as a roadblock.</p>
-            <div class="opcode-cloud" aria-label="Basic instructions">
-              <span>MOVE</span><span>XCHG</span><span>CLR</span><span>ADD</span><span>SUB</span><span>INC</span><span>DEC</span><span>NEG</span><span>NOP</span>
-            </div>
-          </article>
-          <article class="card-tier" data-card-level="intermediate">
-            <h3>Intermediate <span>19 total · Adds 10</span></h3>
-            <p>Add multiplication, division, remainder, bitwise logic, bit reversal, and branching to the Basic set. The exchange operation is named XCHG.</p>
-            <div class="opcode-cloud" aria-label="Instructions added at Intermediate">
-              <span>MUL</span><span>DIV</span><span>MOD</span><span>AND</span><span>OR</span><span>XOR</span><span>NOT</span><span>REV</span><span>BRA</span>
-            </div>
-          </article>
-          <article class="card-tier" data-card-level="advanced">
-            <h3>Advanced <span>31 total · Adds 12</span></h3>
-            <p>Bring unsigned arithmetic, logical and arithmetic shifts, and rotations into the full deck.</p>
-            <div class="opcode-cloud" aria-label="Instructions added at Advanced">
-              <span>ADDU</span><span>SUBU</span><span>MULU</span><span>DIVU</span><span>MODU</span><span>NEGU</span><span>LSL</span><span>LSR</span><span>ASL</span><span>ASR</span><span>ROL</span><span>ROR</span>
-            </div>
-          </article>
-          <p class="tier-note">Basic is selected initially. Complete the tutorial to unlock the higher tiers, or choose <strong>Try Anyway</strong> in Settings. Tutorial lessons use their own scripted cards.</p>
+      <div class="container">
+        <div class="section-heading split-heading">
+          <div><p class="eyebrow">The cards</p><h2>Start simple.<br>Add more possibilities.</h2></div>
+          <p>Begin with a small set of commands, then try more ways to change values and steer the loop. Everyone in a match uses the same card set.</p>
         </div>
-
-        <aside class="spec-panel" aria-label="What is included">
-          <h3>Know your operands</h3>
-          <ul>
-            <li>Signed immediate values: -5 to +5, excluding zero. Unsigned immediates: 1 to 15.</li>
-            <li>Binary operations can also read a source register instead of an immediate value.</li>
-            <li><code>XCHG</code> swaps two registers. <code>REV</code> reverses all four bits.</li>
-            <li><code>BRA</code> jumps -3 to +3 slots, excluding zero. Branch chains stop at the five-instruction limit.</li>
-            <li><code>NOP</code> stops a run without changing registers or flags. It can be dealt as a card as well as encountered on empty slots.</li>
-          </ul>
-        </aside>
+        <div class="tier-grid">
+          <article class="card-tier"><p class="tier-count">9 <span>cards</span></p><h3>Basic</h3><p>Move or swap values, add and subtract, or place a card that stops a run. The starting set for new players.</p></article>
+          <article class="card-tier"><p class="tier-count">19 <span>cards</span></p><h3>Intermediate</h3><p>Expand the Basic set with multiplication, division, logic, and jumps that change the route through the board.</p></article>
+          <article class="card-tier"><p class="tier-count">31 <span>cards</span></p><h3>Advanced</h3><p>Play with the full deck, adding more number operations and new ways to shift and rearrange values.</p></article>
+        </div>
+        <p class="section-note">Move up after the tutorial, or choose “Try Anyway” in Settings when you want to explore.</p>
       </div>
     </section>
 
     <section id="learn" class="section section-muted">
+      <div class="container learn-layout">
+        <div><p class="eyebrow">Also in the app</p><h2>Learn as you play.</h2><p class="learn-intro">Guided practice and a built-in reference help you get familiar with the board and its cards.</p></div>
+        <div class="feature-list">
+          <article><h3>20 interactive lessons</h3><p>Work through the basics, card placement, and winning strategies on a guided game board. Your lesson progress is saved.</p></article>
+          <article><h3>Card dictionary</h3><p>Look up every card, see what it does, and find tips for using it in a match.</p></article>
+          <article><h3>Your preferred pace</h3><p>Adjust animation speed, sound, and vibration. Choose how numbers appear and explore them with the built-in converter.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="screenshots" class="section">
       <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">20 bite-sized lessons</p>
-          <h2>Learn the machine. Then outthink the table.</h2>
-        </div>
-        <div class="mode-grid">
-          <article class="mode-card"><h3>01 · CPU &amp; core terms</h3><p>Nine lessons introduce the shared CPU, integers, number bases, signed and unsigned values, two's complement, registers, MOVE, arithmetic wraparound, and quick adjustments.</p></article>
-          <article class="mode-card"><h3>02 · Memory &amp; execution</h3><p>Four lessons cover shared memory, the Program Counter, the place-and-run cycle, and overwriting existing code.</p></article>
-          <article class="mode-card"><h3>03 · Flow &amp; advanced ops</h3><p>Three lessons explain BRA routing, XCHG and NEG, and the Z, N, C, and V status flags.</p></article>
-          <article class="mode-card"><h3>04 · Tactics &amp; strategy</h3><p>Four lessons put objective timing, planning ahead, sabotage, and overflow traps into practice. Completed lessons are remembered between sessions.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container split">
-        <div>
-          <p class="eyebrow">The fun part of four bits</p>
-          <h2>Small numbers. Sneaky possibilities.</h2>
-          <p>Read the machine in signed numbers, unsigned numbers, hexadecimal, or binary. The bits stay the same; what they mean can change everything.</p>
-          <p>Push a value past its limit and watch it wrap around. In Compiled, even a tiny number can start a very large argument.</p>
-        </div>
-        <div class="mechanic-list">
-          <article class="mechanic"><span>Z/N</span><h3>Read the result</h3><p>Z means the result is zero. N mirrors the top bit: negative when read as signed, or 8–15 when read as unsigned.</p></article>
-          <article class="mechanic"><span>C/V</span><h3>Carry and overflow differ</h3><p>C tracks unsigned carry or borrow; shifts and rotations copy the outgoing bit into C. V reports signed arithmetic overflow. Unsigned arithmetic clears V.</p></article>
-          <article class="mechanic"><span>+1</span><h3>Try the boundary</h3><p>On the bits for 7, <code>ADD #1, R0</code> sets V=1 and C=0. <code>ADDU #1, R0</code> produces the same bits with both flags clear.</p></article>
+        <div class="section-heading"><p class="eyebrow">A closer look</p><h2>Inside the app.</h2><p>Select a screenshot to see it full size.</p></div>
+        <div class="screenshot-gallery">
+          <figure><a class="screenshot-link" href="img/main_menu.jpeg" data-title="Main menu" data-description="Find the game modes, tutorial, card dictionary, and settings." aria-label="Enlarge the main menu screenshot"><img src="img/main_menu.jpeg" alt="Compiled main menu" width="877" height="2048" loading="lazy"></a><figcaption>Main menu</figcaption></figure>
+          <figure><a class="screenshot-link" href="img/play_tab_1.jpeg" data-title="Starting a match" data-description="An open board and a private hand of cards at the start of a match." aria-label="Enlarge the starting board screenshot"><img src="img/play_tab_1.jpeg" alt="An empty Compiled board and the player's starting cards" width="877" height="2048" loading="lazy"></a><figcaption>Starting a match</figcaption></figure>
+          <figure><a class="screenshot-link" href="img/play_tab_2.jpeg" data-title="The shared board" data-description="Placed cards change the shared values as each player works toward a secret objective." aria-label="Enlarge the shared board screenshot"><img src="img/play_tab_2.jpeg" alt="A Compiled match with cards placed on the board" width="877" height="2048" loading="lazy"></a><figcaption>The shared board</figcaption></figure>
+          <figure><a class="screenshot-link" href="img/passnplay.jpeg" data-title="Pass and play" data-description="Set up players for a match on one shared device." aria-label="Enlarge the pass and play screenshot"><img src="img/passnplay.jpeg" alt="Compiled pass and play setup" width="877" height="2048" loading="lazy"></a><figcaption>Pass and play</figcaption></figure>
+          <figure><a class="screenshot-link" href="img/tutorial_section.jpeg" data-title="Interactive lessons" data-description="Learn the game step by step and keep track of completed lessons." aria-label="Enlarge the tutorial screenshot"><img src="img/tutorial_section.jpeg" alt="Compiled tutorial lesson selection" width="877" height="2048" loading="lazy"></a><figcaption>Interactive lessons</figcaption></figure>
+          <figure><a class="screenshot-link" href="img/dictionary.jpeg" data-title="Card dictionary" data-description="Browse the cards and open their explanations." aria-label="Enlarge the card dictionary screenshot"><img src="img/dictionary.jpeg" alt="Compiled card dictionary" width="877" height="2048" loading="lazy"></a><figcaption>Card dictionary</figcaption></figure>
         </div>
       </div>
     </section>
 
-    <section class="download section-tight">
+    <section class="download">
       <div class="container download-layout">
-        <div>
-          <p class="eyebrow">Come play</p>
-          <h2>Ready to make a little trouble?</h2>
-          <p>Compiled is in closed testing on Google Play. Join the test, grab a hand of cards, and see what your tiny machine can do.</p>
-        </div>
-        <a class="button" href="https://play.google.com/store/apps/details?id=com.compiled.game" target="_blank" rel="noopener noreferrer">Join the test</a>
+        <div><p class="eyebrow">Compiled for Android</p><h2>Interested in playing?</h2><p>Compiled is currently in closed testing on Google Play. Access is limited to testers.</p></div>
+        <a class="button" href="https://play.google.com/store/apps/details?id=com.compiled.game" target="_blank" rel="noopener noreferrer">View on Google Play <span aria-hidden="true">↗</span></a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-layout">
-      <div>
-        <p>One shared CPU. Infinite ways to cause trouble.</p>
-      </div>
-      <nav aria-label="Footer navigation">
-        <a href="#game">Game</a>
-        <a href="#modes">Modes</a>
-        <a href="#learn">Learn</a>
-        <a href="#screenshots">See it</a>
-        <a href="privacy.html">Privacy</a>
-      </nav>
+      <a class="brand" href="index.html"><span class="brand-prompt" aria-hidden="true">&gt;_</span><span class="brand-name">COMPILED</span></a>
+      <nav aria-label="Footer navigation"><a href="privacy.html">Privacy policy</a><a href="mailto:compiledapp@gmail.com">Contact</a></nav>
     </div>
   </footer>
 
-  <dialog id="screenshot-dialog" class="screenshot-dialog" aria-labelledby="dialog-title">
+  <dialog id="screenshot-dialog" class="screenshot-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-desc">
     <div class="dialog-content">
-      <button id="dialog-close" class="icon-button dialog-close" type="button" aria-label="Close screenshot">x</button>
-      <img id="dialog-img" src="" alt="" loading="lazy">
-      <div class="dialog-text">
-        <h3 id="dialog-title"></h3>
-        <p id="dialog-desc"></p>
-      </div>
+      <button id="dialog-close" class="dialog-close" type="button" aria-label="Close screenshot" autofocus>Close <span aria-hidden="true">×</span></button>
+      <img id="dialog-img" alt="">
+      <div class="dialog-text"><h2 id="dialog-title">App screenshot</h2><p id="dialog-desc"></p></div>
     </div>
   </dialog>
-
-  <script src="site.js"></script>
 </body>
 </html>
