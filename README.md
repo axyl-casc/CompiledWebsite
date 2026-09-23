@@ -10,7 +10,7 @@ Informational website for **Compiled™**, the Android strategy board game. Play
 - Basic, Intermediate, and Advanced sets with 9, 20, and 32 card types.
 - Twenty-one interactive lessons, the card dictionary, rated profiles, and player preferences.
 - Six existing app screenshots, labeled as an earlier build, with an accessible full-size viewer.
-- The Google Play store link, contact address, current local-storage information in both privacy pages, and the app's copyright notice.
+- The Google Play store link, a free online version on itch.io, contact address, current local-storage information in both privacy pages, and the app's copyright notice.
 
 Keep the homepage brief and approachable. Detailed rules, turn limits, rating formulas, deck weighting, instruction syntax, CPU internals, and development details belong in the app and its documentation.
 
