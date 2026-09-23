@@ -1,4 +1,43 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.querySelector(".screenshot-carousel");
+  if (carousel) {
+    const slides = Array.from(carousel.querySelectorAll("figure"));
+    const previous = carousel.querySelector(".carousel-previous");
+    const next = carousel.querySelector(".carousel-next");
+    const status = carousel.querySelector(".carousel-status");
+    let current = 0;
+
+    if (slides.length && previous && next && status) {
+      const showSlide = (index) => {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((slide, position) => {
+          slide.hidden = position !== current;
+        });
+        const active = slides[current];
+        active.querySelector("img").loading = "eager";
+        status.textContent = `${current + 1} / ${slides.length} · ${active.querySelector("figcaption").textContent}`;
+      };
+
+      carousel.classList.add("is-carousel");
+      carousel.setAttribute("aria-roledescription", "carousel");
+      previous.hidden = next.hidden = status.hidden = false;
+      showSlide(0);
+      previous.addEventListener("click", () => showSlide(current - 1));
+      next.addEventListener("click", () => showSlide(current + 1));
+      carousel.addEventListener("keydown", (event) => {
+        if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+        if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+          event.preventDefault();
+          showSlide(current + (event.key === "ArrowRight" ? 1 : -1));
+          // Keep keyboard focus visible when navigating from the screenshot link.
+          if (event.target.closest(".screenshot-link")) {
+            slides[current].querySelector("a").focus({ preventScroll: true });
+          }
+        }
+      });
+    }
+  }
+
   const dialog = document.getElementById("screenshot-dialog");
   const dialogImage = document.getElementById("dialog-img");
   const dialogTitle = document.getElementById("dialog-title");

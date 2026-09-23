@@ -9,7 +9,7 @@ Informational website for **Compiled™**, the Android strategy board game. Play
 - Short introductions to rated singleplayer, custom games, and pass and play.
 - Basic, Intermediate, and Advanced sets with 9, 20, and 32 card types.
 - Twenty-one interactive lessons, the card dictionary, rated profiles, and player preferences.
-- Six existing app screenshots, labeled as an earlier build, with an accessible full-size viewer.
+- Ten updated app screenshots in a centered carousel with previous/next buttons, keyboard arrow navigation, and an accessible full-size viewer. Without JavaScript, all screenshots remain available in a gallery.
 - The Google Play store link, a free online version on itch.io, contact address, current local-storage information in both privacy pages, and the app's copyright notice.
 
 Keep the homepage brief and approachable. Detailed rules, turn limits, rating formulas, deck weighting, instruction syntax, CPU internals, and development details belong in the app and its documentation.
@@ -38,4 +38,4 @@ When app features change, verify the homepage against these Android source files
 - `src/navigation/AppNavigator.tsx`, `src/utils/storage.ts`, and `src/utils/ratedStorage.ts`: saved settings, lesson progress, profiles, and rated matches.
 - `app.json` and `src/components/CopyrightNotice.tsx`: version and attribution.
 
-The Google Play copy treats the app as released, as directed by the owner. Replace screenshots only with actual app captures; remove the earlier-build labels when current captures are available.
+The Google Play copy treats the app as released, as directed by the owner. Replace screenshots only with actual app captures. The current screenshots were supplied on September 23, 2026.

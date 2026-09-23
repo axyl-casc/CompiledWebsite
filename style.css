@@ -90,9 +90,18 @@ h3 { font-size: 1.25rem; letter-spacing: -0.02em; }
 .feature-list article { padding-bottom: 1.6rem; border-bottom: 1px solid var(--line); margin-bottom: 1.6rem; }
 .feature-list article:last-child { margin-bottom: 0; padding-bottom: 0; border: 0; }
 
-.screenshot-gallery { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1.2rem; }
+.screenshot-gallery { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1.2rem; }
 .screenshot-gallery figure { min-width: 0; margin: 0; }
 .screenshot-gallery figcaption { font-size: 0.875rem; margin-top: 0.8rem; color: var(--muted); }
+.screenshot-carousel.is-carousel { display: grid; grid-template-columns: 48px minmax(0, 280px) 48px; justify-content: center; align-items: center; gap: 1rem clamp(0.75rem, 4vw, 3rem); }
+.is-carousel .screenshot-gallery { display: block; }
+.is-carousel .screenshot-gallery .screenshot-link { max-width: none; }
+.is-carousel .screenshot-gallery figcaption { text-align: center; }
+.carousel-arrow { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 2.3rem; padding: 0; border: 1px solid var(--accent); border-radius: 5px; background: var(--panel); color: var(--accent); font-family: var(--mono); font-size: 1.75rem; line-height: 1; cursor: pointer; }
+.carousel-arrow:hover { background: var(--accent); color: var(--bg); }
+.carousel-arrow:active { background: #99ecdf; }
+.carousel-arrow[hidden], .carousel-status[hidden] { display: none; }
+.carousel-status { grid-column: 1 / -1; margin: 0; text-align: center; font-family: var(--mono); font-size: 0.8125rem; }
 .download { border-top: 1px solid var(--line); background: var(--panel); padding-block: 3.5rem; }
 .download-layout { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
 .download h2 { font-size: clamp(1.75rem, 3vw, 2.4rem); }
