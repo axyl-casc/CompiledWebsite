@@ -23,12 +23,13 @@ Keep the homepage brief and approachable. Detailed rules, turn-limit formulas, r
 - `site.js`: screenshot viewer; image links also work without JavaScript.
 - `img/`: original app screenshots and logo.
 - `privacy.html` and `privacy/index.html`: equivalent privacy pages, with relative links for both URLs.
+- `terms.html` and `terms/index.html`: equivalent Terms of Use for the Android app and browser demo, linked from every page footer.
 
 ## Preview and deployment
 
 Plain HTML, CSS, and JavaScript; no dependencies or build step. Open `index.html` directly, or serve this folder with a static HTTP server.
 
-The repository can be published from its root using GitHub Pages or another static host. Keep both privacy URLs available when publishing.
+The repository can be published from its root using GitHub Pages or another static host. Keep both privacy URLs and both terms URLs available when publishing.
 
 When app features change, verify the homepage against these Android source files:
 

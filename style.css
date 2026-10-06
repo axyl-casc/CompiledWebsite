@@ -123,7 +123,7 @@ h3 { font-size: 1.25rem; letter-spacing: -0.02em; }
 .dialog-text h2 { font-size: 1.25rem; margin-bottom: 0.6rem; }
 .dialog-text p { font-size: 0.9375rem; }
 
-/* Both existing privacy URLs share the site's typography and navigation. */
+/* Privacy and terms pages share the site's typography and navigation. */
 .policy-layout { width: min(calc(100% - 3rem), 760px); margin-inline: auto; }
 .policy-hero { padding-block: 4rem 2rem; }
 .policy-hero h1 { font-size: clamp(2.5rem, 5vw, 3.6rem); margin-bottom: 1.25rem; }
