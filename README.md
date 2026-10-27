@@ -1,6 +1,6 @@
 # Compiled Website
 
-Informational website for **Compiled™**, the Android strategy board game. Player-facing copy is checked against the sibling `CompiledAndroid` app source; the game README can lag behind implementation. Last checked against app version **1.0.11**, based on commit `da0ee7f` plus the current local changes (including game-length settings), on October 3, 2026. This records a source review, not verification of the deployed store or browser build.
+Informational website for **Compiled™**, the Android strategy board game. Player-facing copy is checked against the sibling `CompiledAndroid` app source; the game README can lag behind implementation. Last checked against app version **1.0.12**, based on commit `855424d`, on October 27, 2026. This records a source review, not verification of the deployed store or browser build.
 
 ## Content
 
@@ -8,9 +8,10 @@ Informational website for **Compiled™**, the Android strategy board game. Play
 - A brief three-step introduction: place a card, press Run, and complete your secret goal.
 - Rated singleplayer, custom games with three board sizes and four AI difficulties, and pass and play with optional computer rivals.
 - Standard or unlimited turns for new rated, custom, and pass-and-play games.
+- Easy, Medium, and Hard objectives, selected separately from AI difficulty: one register condition, two register conditions, or two plus a status flag requirement. All conditions must hold at the end of the player's turn.
 - Basic, Intermediate, and Advanced sets with 9, 20, and 32 card types; the demo uses Basic in matches.
 - Twenty-one interactive lessons, the card dictionary, rated profiles, and resuming unfinished rated matches.
-- English and Korean, four number formats and the register converter, animation and vibration preferences, and separate sound-effect and background-music volume controls.
+- English, Korean, French, and Spanish, four number formats and the register converter, animation and vibration preferences, and separate sound-effect and background-music volume controls.
 - Ten updated app screenshots in a centered carousel with previous/next buttons, keyboard arrow navigation, and an accessible full-size viewer. Without JavaScript, all screenshots remain available in a gallery.
 - The Google Play store link, a free browser demo on itch.io, contact address, current local-storage information in both privacy pages, and the app's copyright notice.
 
@@ -35,6 +36,7 @@ When app features change, verify the homepage against these Android source files
 
 - `src/game/engine/cardLevels.ts`: cumulative card counts and JMP availability.
 - `src/game/engine/config.ts`, `execution.ts`, and `engine.ts`: hand size, board sizes, execution stops, objective checks, and draw limits.
+- `src/game/engine/objectives.ts` and `src/screens/SettingsScreen.tsx`: objective difficulty tiers and status flag requirements.
 - `src/game/rated/types.ts` and `ratedMode.ts`: level count, opponents, progression, and rated board size.
 - `src/game/tutorial/tutorial.ts`: lesson count and content.
 - `src/screens/SettingsScreen.tsx` and `src/game/engine/cardWeights.ts`: card sets and deck weighting.
